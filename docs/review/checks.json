@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "checks": [
+    "Keyboard skip link preserves route and focuses content",
+    "Desktop overview renders",
+    "Dashboard overdue filter",
+    "Risk matrix drilldown and dialog Escape/focus restoration",
+    "Bounded pagination and browser back",
+    "Search no-results, clear and native filter selection",
+    "Required fields, date validation and escaped risk creation",
+    "Dashboard high-risk count recomputed after creation",
+    "In-session draft survives cancel/reopen",
+    "Simulated status propagates to dashboard and audit",
+    "Document and SoA details",
+    "CSV downloads real synthetic data",
+    "Unknown route recovery and reset on reload",
+    "All routes fit 390px; mobile form and reduced motion",
+    "Landing record links open exact details and close to owning list",
+    "Landing desktop/mobile, module entry, portal return and demo CTA",
+    "Mobile portal return, action footer and 1280px laptop fit",
+    "No browser JavaScript errors"
+  ],
+  "errors": [],
+  "scope": "Synthetic mockup only; no backend/auth/security certification"
+}

@@ -1,0 +1,133 @@
+.portal { background: white; }
+.portal-header { border-top: 4px solid var(--navy); border-bottom: 1px solid var(--line); }
+.portal-header-inner, .portal-nav-row { max-width: 1280px; margin: auto; padding-left: 36px; padding-right: 36px; }
+.portal-header-inner { display: flex; align-items: center; gap: 37px; min-height: 100px; }
+.portal-brand { display: block; color: var(--navy); text-decoration: none; line-height: 1; min-width: 120px; }
+.portal-brand:hover { text-decoration: none; }
+.portal-brand > span { font-size: 29px; font-weight: 650; letter-spacing: -.7px; }
+.portal-brand b { font-weight: 400; }
+.portal-brand small { display: block; color: var(--muted); font-size: 12px; line-height: 1.5; margin-top: 8px; }
+.agency-name { color: var(--ink); font-size: 13px; line-height: 1.8; padding-left: 31px; border-left: 1px solid var(--line); }
+.agency-name span { color: var(--muted); font-size: 12px; }
+.portal-header-inner > .button { margin-left: auto; }
+.portal-nav-row { display: flex; justify-content: space-between; align-items: center; gap: 20px; min-height: 53px; border-top: 1px solid var(--line); }
+.portal-nav-row nav { display: flex; gap: 32px; }
+.portal-nav-row nav a { font-size: 12px; color: var(--muted); text-decoration: none; padding: 16px 0; }
+.portal-nav-row nav a:hover { color: var(--blue); text-decoration: underline; }
+.prototype-label { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 12px; white-space: nowrap; }
+.prototype-label > span { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; }
+.portal-main { max-width: 1280px; padding: 0 36px; min-height: 0; margin: auto; }
+.portal-intro { display: grid; grid-template-columns: 1.8fr 1fr; gap: 72px; padding: 59px 0 52px; align-items: center; scroll-margin-top: 25px; }
+.portal-intro h1 { font-size: 53px; font-weight: 600; letter-spacing: -1.5px; line-height: 1.15; }
+.portal-intro > div > p { max-width: 57ch; font-size: 16px; line-height: 1.8; color: var(--muted); margin-top: 21px; }
+.entry-block { border-left: 1px solid var(--line); padding: 8px 0 8px 37px; }
+.entry-block h2 { font-size: 18px; }
+.portal-intro .entry-block p { font-size: 13px; line-height: 1.8; margin-top: 12px; max-width: 35ch; }
+.entry-block .button { margin-top: 23px; min-height: 44px; padding: 11px 18px; }
+.entry-block small { display: block; color: var(--muted); margin-top: 12px; }
+.portal-register { border: 1px solid #BACBD6; border-radius: 8px; overflow: hidden; }
+.register-heading { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 23px 26px; background: var(--navy); color: white; }
+.register-heading h2 { font-size: 19px; font-weight: 500; }
+.register-heading p { font-size: 12px; color: #CDDBE4; margin-top: 6px; }
+.register-heading > span { color: #CDDBE4; font-size: 12px; }
+.register-scroll { position: relative; overflow: auto; scrollbar-gutter: stable; }
+.register-scroll-hint { display: none; }
+.attention-table { font-size: 13px; }
+.attention-table th { padding: 13px 26px; font-size: 12px; }
+.attention-table td { padding: 20px 26px; }
+.attention-table td:first-child { width: 40%; }
+.attention-table td > a { color: var(--ink); font-weight: 600; text-decoration: none; white-space: normal; display: inline-block; min-width: 230px; }
+.attention-table td > a:hover { color: var(--blue); text-decoration: underline; }
+.attention-table small { display: block; font-size: 12px; color: var(--muted); margin-top: 5px; }
+.attention-table .register-open { min-width: 35px; width: 35px; height: 35px; display: grid; place-content: center; border-radius: 4px; color: var(--blue); }
+.register-open:hover { background: var(--blue-soft); }
+.register-note { display: flex; gap: 20px; justify-content: space-between; align-items: center; padding: 15px 26px; background: #F5F8FA; border-top: 1px solid var(--line); font-size: 12px; color: var(--muted); }
+.register-note a { display: inline-flex; gap: 10px; align-items: center; text-decoration: none; font-weight: 600; white-space: nowrap; }
+.register-note a:hover { text-decoration: underline; }
+.register-note svg { width: 17px; height: 17px; }
+.sr-only { position: absolute; top: 0; left: 0; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.portal-modules { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; padding: 65px 0; scroll-margin-top: 25px; }
+.section-intro h2, .flow-intro h2 { font-size: 25px; line-height: 1.35; }
+.section-intro p, .flow-intro p { font-size: 13px; line-height: 1.8; color: var(--muted); margin-top: 13px; max-width: 34ch; }
+.module-directory { display: grid; grid-template-columns: 1fr 1fr; gap: 0 36px; }
+.module-row { display: flex; align-items: center; gap: 12px; padding: 20px 0; border-bottom: 1px solid var(--line); color: var(--ink); text-decoration: none; }
+.module-row:nth-child(-n+2) { padding-top: 0; }
+.module-row h3 { font-size: 15px; }
+.module-row p { font-size: 12px; color: var(--muted); line-height: 1.7; margin-top: 7px; max-width: 36ch; }
+.module-row > svg { margin-left: auto; width: 17px; height: 17px; color: var(--muted); }
+.module-row:hover { text-decoration: none; }
+.module-row:hover h3 { color: var(--blue); text-decoration: underline; text-underline-offset: 4px; }
+.module-row:hover svg { color: var(--blue); }
+.portal-flow { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; padding: 41px 0 48px; border-top: 1px solid var(--line); scroll-margin-top: 25px; }
+.flow-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 31px 38px; }
+.flow-steps li { display: flex; gap: 14px; align-items: flex-start; }
+.flow-steps li > span { display: grid; place-content: center; width: 28px; height: 28px; flex-shrink: 0; color: var(--blue); background: var(--blue-soft); font-size: 12px; border-radius: 3px; margin-top: 1px; }
+.flow-steps h3 { font-size: 14px; }
+.flow-steps p { font-size: 12px; line-height: 1.75; color: var(--muted); margin-top: 7px; max-width: 35ch; }
+.portal-demo-foot { display: flex; justify-content: space-between; align-items: center; gap: 35px; border-top: 1px solid var(--line); padding: 25px 0 38px; }
+.portal-demo-foot p { font-size: 12px; color: var(--muted); max-width: 80ch; line-height: 1.8; }
+.portal-demo-foot p strong { font-weight: 600; color: var(--ink); }
+.portal-demo-foot .button { flex-shrink: 0; }
+.portal-footer { max-width: none; border-top: 1px solid var(--line); background: #EDF2F5; padding: 27px max(36px, calc((100% - 1208px)/2)); align-items: flex-start; color: var(--muted); font-size: 12px; }
+.portal-footer strong { color: var(--ink); font-size: 13px; font-weight: 600; }
+.portal-footer p { margin-top: 7px; }
+.portal-footer small { display: block; font-size: 11px; margin-top: 7px; }
+@media (max-width: 1100px) {
+  .portal-intro { gap: 36px; grid-template-columns: 1.6fr 1fr; }
+  .portal-intro h1 { font-size: 44px; }
+  .portal-modules, .portal-flow { gap: 45px; }
+  .entry-block { padding-left: 27px; }
+  .attention-table th, .attention-table td { padding-left: 20px; padding-right: 20px; }
+}
+@media (max-width: 800px) {
+  .agency-name { font-size: 12px; padding-left: 24px; }
+  .agency-name span { font-size: 11px; }
+  .portal-header-inner { gap: 24px; }
+  .portal-intro { grid-template-columns: 1fr; gap: 30px; padding: 42px 0; }
+  .portal-intro h1 { font-size: 45px; }
+  .entry-block { padding: 22px 0 0; border-left: 0; border-top: 1px solid var(--line); }
+  .portal-intro .entry-block p { max-width: 65ch; }
+  .entry-block .button { margin-top: 16px; }
+  .register-heading { align-items: flex-start; }
+  .register-heading > span { font-size: 11px; }
+  .register-note { flex-wrap: wrap; gap: 9px; }
+  .portal-modules, .portal-flow { grid-template-columns: 1fr; gap: 28px; padding: 41px 0; }
+  .section-intro p, .flow-intro p { max-width: 65ch; }
+  .portal-footer { gap: 25px; }
+}
+@media (max-width: 580px) {
+  .portal-header-inner, .portal-nav-row { padding-left: 20px; padding-right: 20px; }
+  .portal-header-inner { min-height: 91px; gap: 15px; }
+  .portal-brand > span { font-size: 26px; }
+  .agency-name { display: none; }
+  .portal-nav-row { flex-wrap: wrap; gap: 0; padding-top: 6px; padding-bottom: 10px; }
+  .portal-nav-row nav { gap: 27px; justify-content: space-between; width: 100%; }
+  .portal-nav-row nav a { padding: 12px 0; }
+  .prototype-label { font-size: 11px; }
+  .portal-main { padding: 0 20px; }
+  .portal-intro { padding: 33px 0 31px; gap: 27px; }
+  .portal-intro h1 { font-size: 35px; letter-spacing: -.9px; line-height: 1.2; }
+  .portal-intro > div > p { font-size: 14px; margin-top: 17px; }
+  .entry-block h2 { font-size: 17px; }
+  .portal-intro .entry-block p { font-size: 13px; margin-top: 9px; }
+  .register-heading { padding: 20px 18px; flex-wrap: wrap; gap: 13px; }
+  .register-heading h2 { font-size: 18px; }
+  .register-heading p { font-size: 12px; }
+  .attention-table th, .attention-table td { padding-left: 18px; padding-right: 18px; }
+  .attention-table td > a { min-width: 190px; }
+  .register-scroll-hint { display: block; font-size: 11px; color: var(--muted); padding: 11px 18px; background: #F5F8FA; border-bottom: 1px solid var(--line); }
+  .register-note { padding: 15px 18px; font-size: 11px; }
+  .register-note a { font-size: 12px; }
+  .portal-modules { gap: 25px; }
+  .section-intro h2, .flow-intro h2 { font-size: 24px; }
+  .module-directory { grid-template-columns: 1fr; }
+  .module-row { padding: 21px 0; }
+  .module-row:nth-child(2) { padding-top: 21px; }
+  .module-row h3 { font-size: 15px; }
+  .module-row p { font-size: 12px; }
+  .flow-steps { grid-template-columns: 1fr; gap: 24px; }
+  .flow-steps h3 { font-size: 14px; }
+  .flow-steps p { font-size: 12px; max-width: 42ch; }
+  .portal-demo-foot { flex-direction: column; align-items: flex-start; gap: 18px; padding-bottom: 29px; }
+  .portal-footer { padding: 25px 20px; flex-direction: column; gap: 18px; }
+}

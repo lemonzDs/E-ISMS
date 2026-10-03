@@ -1,0 +1,202 @@
+# BRIEFING PROJEK: PLATFORM PENGURUSAN ISMS SUK PAHANG
+
+Tarikh: 2 Oktober 2026
+Versi: 0.1 — Draf awal untuk perbincangan dan pembetulan
+Organisasi sasaran: Pejabat Setiausaha Kerajaan Pahang (SUK Pahang)
+Nama kerja aplikasi: e-ISMS SUK Pahang
+
+## 1. Ringkasan projek
+
+Membangunkan platform dalaman untuk mendigitalkan pengurusan Information Security Management System (ISMS) SUK Pahang yang, menurut maklumat awal pengguna, kini dilaksanakan secara manual.
+
+Platform ini dicadangkan sebagai tempat berpusat untuk mengurus rekod, dokumen, risiko, tindakan, semakan, kelulusan dan bukti pelaksanaan ISMS. Setiap rekod perlu mempunyai pemilik, status dan sejarah perubahan yang boleh dijejaki.
+
+Dokumen ini ialah briefing awal, bukan spesifikasi pembangunan yang telah diluluskan. Modul, peranan dan aliran di bawah ialah cadangan sehingga disahkan bersama pegawai yang mengendalikan proses sebenar.
+
+## 2. Pembetulan istilah dan hala tuju
+
+- ISMS bermaksud Sistem Pengurusan Keselamatan Maklumat. Ia merangkumi tadbir urus, manusia, proses dan teknologi; bukan aplikasi semata-mata.
+- Nama projek yang lebih tepat ialah “Pendigitalan Pengurusan ISMS SUK Pahang”. Nama ringkas aplikasi boleh kekal “e-ISMS”.
+- Keselamatan maklumat merangkumi rekod fizikal, maklumat digital, manusia dan perkhidmatan dalam skop organisasi; bukan hanya komputer dan rangkaian.
+- Aplikasi membantu merekod dan memantau pelaksanaan. Kewujudan aplikasi atau dokumen yang lengkap tidak dengan sendirinya membuktikan pematuhan atau menjamin pensijilan.
+- ISO/IEC 27001:2022 boleh menjadi rujukan keperluan ISMS. Rujukan rasmi turut menyenaraikan pindaan 2024. Edisi, pindaan, skop pensijilan serta polisi yang terpakai kepada SUK Pahang perlu disahkan dengan pihak bertanggungjawab.
+
+Sumber: https://www.iso.org/standard/27001
+Sumber pindaan: https://webstore.iec.ch/en/publication/92579
+
+## 3. Maklumat diketahui dan perkara belum disahkan
+
+Diketahui daripada pengguna:
+- Organisasi sasaran ialah SUK Pahang.
+- Pengurusan semasa adalah manual.
+- Matlamat ialah pendigitalan, bermula dengan briefing yang boleh diperbetulkan.
+
+Belum disahkan:
+- Bahagian, lokasi, proses dan perkhidmatan yang termasuk dalam skop ISMS.
+- Status pensijilan dan dokumen rujukan yang sedang digunakan.
+- Bentuk rekod manual: borang kertas, Excel, Word, folder bersama atau gabungan.
+- Struktur jawatankuasa, kuasa kelulusan, jumlah pengguna dan kekerapan semakan.
+- Infrastruktur, integrasi, klasifikasi maklumat dan kaedah penyimpanan yang dibenarkan.
+
+Nama jawatan dan aliran cadangan dalam briefing ini bukan pengesahan struktur rasmi SUK Pahang.
+
+## 4. Masalah yang hendak diselesaikan
+
+Hipotesis untuk disahkan melalui semakan proses manual:
+- Rekod dan bukti berselerak serta mengambil masa untuk dicari.
+- Sukar menentukan dokumen versi terkini dan status kelulusannya.
+- Tindakan susulan bergantung pada peringatan individu.
+- Penyediaan laporan dan bahan audit memerlukan penyusunan berulang.
+- Pemilik risiko, pelaksana tindakan dan pihak pelulus tidak sentiasa jelas pada rekod.
+
+Objektif sistem ialah mengurangkan kerja berulang, mempercepat pencarian bukti dan memberi gambaran status yang boleh dipercayai kepada pengurusan.
+
+## 5. Pilihan pendekatan
+
+| Pilihan | Kelebihan | Kekangan |
+| --- | --- | --- |
+| Repositori dokumen sahaja | Cepat dimulakan; memudahkan carian dan kawalan versi | Risiko, kelulusan dan tindakan masih banyak diurus berasingan |
+| Platform modular secara berfasa — disyorkan | Menghubungkan rekod dengan pemilik, kelulusan dan bukti; boleh diuji secara rintis | Memerlukan penyelarasan proses dan pemilik data |
+| Platform menyeluruh sekali gus | Liputan awal lebih luas | Skop, kos dan risiko perubahan lebih besar sebelum proses sebenar difahami |
+
+Cadangan: mulakan dengan satu skop rintis dan proses teras. Tambah modul selepas pengguna mengesahkan aliran kerja dan mutu data.
+
+## 6. Cadangan skop versi pertama (MVP)
+
+| Modul | Fungsi minimum | Hasil |
+| --- | --- | --- |
+| Pengguna dan akses | Akaun, peranan, bahagian, skop rekod dan penyahaktifan | Akses mengikut tanggungjawab |
+| Dokumen terkawal | Daftar dokumen, versi, pemilik, semakan, kelulusan dan tarikh semakan seterusnya | Dokumen diluluskan mudah dikenal pasti |
+| Daftar risiko | Pautan kepada aset/proses, ancaman, kelemahan, kawalan sedia ada, penilaian dan pemilik | Risiko serta keputusan boleh dijejaki |
+| Rawatan risiko dan tindakan | Pelaksana, tarikh sasaran, kemajuan, bukti dan pengesahan penutupan | Tindakan tertunggak dapat dipantau |
+| Kawalan dan Statement of Applicability (SoA) | Kebolehgunaan kawalan, justifikasi, status pelaksanaan, pemilik dan pautan bukti | Keputusan kawalan didokumentasikan |
+| Papan pemuka dan laporan | Tugas sendiri, tindakan lewat, risiko mengikut tahap, dokumen perlu semakan dan eksport terkawal | Status operasi berdasarkan rekod sebenar |
+| Jejak audit | Rekod perubahan, penghantaran, kelulusan dan tindakan penting | Sejarah siapa, apa dan bila |
+
+Daftar aset/proses untuk MVP memadai dengan maklumat yang diperlukan bagi penilaian risiko. Elakkan membina semula sistem inventori aset sedia ada jika rujukan atau import sudah mencukupi.
+
+Kaedah skor risiko, matriks, ambang penerimaan dan kekerapan semakan perlu mengikuti kaedah yang diluluskan organisasi. Jangan menetapkan formula secara andaian.
+
+## 7. Cadangan fasa seterusnya
+
+- Audit dalaman: jadual, skop, dapatan, ketidakakuran dan tindakan pembetulan.
+- Insiden keselamatan maklumat: pelaporan, penilaian, tindakan, pemulihan dan pengajaran; selaras dengan prosedur pelaporan sedia ada.
+- Kajian semula pengurusan: bahan mesyuarat, keputusan, pemilik dan tindakan susulan.
+- Latihan dan kesedaran: aktiviti, kehadiran dan pengakuan penerimaan polisi.
+- Integrasi akaun organisasi, e-mel serta sistem aset, tertakluk kepada kemudahan dan kebenaran sebenar.
+
+Proses yang belum didigitalkan perlu terus diurus melalui kaedah sedia ada. Pembahagian fasa aplikasi tidak menggugurkan tanggungjawab ISMS organisasi.
+
+## 8. Pengguna dan tanggungjawab cadangan
+
+| Peranan | Tanggungjawab |
+| --- | --- |
+| Pentadbir teknikal | Mengurus akaun, konfigurasi dan operasi aplikasi; tidak mendapat kuasa kelulusan urusan secara automatik |
+| Penyelaras ISMS | Menyelaras rekod, dokumen, pelaporan dan tindakan merentas skop yang diberikan |
+| Pemilik risiko/proses/aset | Menilai risiko, menyelenggara rekod dan melaksanakan tindakan dalam skopnya |
+| Penyemak | Memeriksa kecukupan rekod, penilaian atau bukti sebelum kelulusan |
+| Pelulus yang diberi kuasa | Meluluskan dokumen, keputusan rawatan atau penerimaan risiko mengikut kuasa sebenar |
+| Juruaudit | Melihat rekod dan bukti yang dibenarkan serta merekod dapatan mengikut tugasan |
+| Pengurusan | Melihat laporan dalam skop yang dibenarkan dan merekod keputusan berkaitan |
+
+Akses perlu mengambil kira peranan, bahagian dan sensitiviti rekod. Pengguna tidak semestinya boleh melihat semua rekod hanya kerana berada dalam bahagian yang sama. Pengasingan penyedia, penyemak dan pelulus perlu dipersetujui.
+
+## 9. Contoh aliran kerja
+
+Dokumen:
+Draf → dihantar untuk semakan → semakan → kelulusan → diterbitkan sebagai versi berkuat kuasa → semakan berkala → diganti/diarkib.
+Jika pembetulan diperlukan, rekod dikembalikan dengan ulasan. Versi diluluskan tidak ditimpa; pindaan menghasilkan versi baharu dan sejarah lama dikekalkan.
+
+Risiko:
+Daftar aset/proses → kenal pasti risiko → nilai berdasarkan kaedah diluluskan → semak → putuskan rawatan → laksanakan tindakan → lampirkan bukti → nilai semula risiko baki → keputusan penerimaan oleh pihak berkuasa → semakan berkala.
+Tindakan selesai tidak bermaksud risiko terhapus atau diterima secara automatik.
+
+Tindakan:
+Ditugaskan → dalam tindakan → dihantar untuk pengesahan → ditutup atau dikembalikan untuk pembetulan.
+Penutupan memerlukan pengesah dan bukti mengikut jenis tindakan. Sistem merekod sebab penolakan, penugasan semula dan pembukaan semula.
+
+## 10. Data dan hubungan utama
+
+- Bahagian, pengguna, peranan dan skop akses.
+- Skop ISMS, aset/proses, pemilik dan klasifikasi maklumat.
+- Risiko, penilaian bertarikh, rawatan, kawalan dan keputusan penerimaan.
+- Dokumen, versi, lampiran bukti, semakan dan kelulusan.
+- Tindakan, tarikh sasaran, kemajuan, pengesahan dan jejak audit.
+
+Contoh hubungan: satu proses mempunyai beberapa risiko; satu risiko boleh mempunyai beberapa tindakan dan kawalan; bukti boleh dipautkan kepada rekod berkaitan tanpa memuat naik salinan berulang. Akses kepada pautan tidak boleh mendedahkan bukti yang pengguna tidak dibenarkan melihat.
+
+## 11. Keperluan operasi aplikasi
+
+Cadangan awal untuk diperincikan sebelum pembangunan:
+- Antara muka Bahasa Melayu dengan istilah standard yang konsisten.
+- Carian, penapis, nombor rujukan unik dan paparan tugasan mengikut pengguna.
+- Kawalan akses pada rekod, lampiran, laporan dan eksport.
+- Pengesahan pengguna, pengurusan sesi dan perlindungan akaun berkeistimewaan.
+- Kawalan muat naik serta penyimpanan lampiran tanpa pautan awam.
+- Perlindungan penghantaran data, sandaran dan ujian pemulihan.
+- Jejak audit yang tidak boleh dipinda melalui fungsi pengguna biasa.
+- Polisi penyimpanan, pengarkiban dan pelupusan rekod yang dipersetujui.
+- Peringatan tugasan tanpa mendedahkan kandungan sensitif dalam notifikasi.
+
+Sasaran prestasi, kapasiti, waktu operasi, tempoh kehilangan data yang boleh diterima dan masa pemulihan perlu dipersetujui. Teknologi, lokasi hos serta penggunaan intranet/VPN/Internet belum diputuskan dalam briefing ini.
+
+## 12. Migrasi daripada proses manual
+
+1. Pilih satu bahagian atau proses rintis yang dipersetujui.
+2. Kumpulkan contoh borang, laporan, daftar dan laluan kelulusan semasa.
+3. Padankan medan lama dengan struktur baharu; buang pendua dan sahkan pemilik.
+4. Tentukan rekod aktif untuk migrasi serta rekod sejarah untuk arkib.
+5. Jalankan import percubaan dan semak bilangan rekod, lampiran serta ketepatan pemetaan.
+6. Dapatkan pengesahan pemilik data sebelum peralihan operasi.
+7. Latih pengguna, tetapkan tarikh peralihan dan pelan kembali kepada proses terdahulu jika perlu.
+
+Rekod lama hendaklah ditandakan sebagai rekod migrasi. Jangan mencipta sejarah kelulusan digital yang tidak pernah berlaku. Tempoh penggunaan manual dan digital serentak perlu dihadkan supaya rekod tidak bercanggah.
+
+## 13. Ukuran kejayaan dan penerimaan awal
+
+Ujian penerimaan cadangan:
+- Pengguna boleh melengkapkan satu kitaran dokumen dan satu kitaran risiko rintis dengan sejarah keputusan.
+- Versi dokumen terdahulu boleh dijejaki dan versi berkuat kuasa dapat dikenal pasti.
+- Setiap tindakan aktif mempunyai pemilik, tarikh sasaran dan status; tindakan lewat dipaparkan dengan betul.
+- Pengguna tanpa kebenaran gagal mengakses rekod serta lampiran, termasuk melalui pautan terus dan eksport.
+- Laporan sepadan dengan rekod sumber dan skop akses pengguna.
+- Data migrasi disahkan pemilik dan pemulihan sandaran berjaya diuji.
+
+Metrik operasi: masa mencari bukti, masa menyediakan laporan, kadar rekod lengkap dan kadar tindakan lewat. Ukur keadaan semasa terlebih dahulu sebelum menetapkan sasaran berangka.
+
+## 14. Perkara di luar skop awal
+
+- Sistem pemantauan serangan, antivirus, pengimbas kelemahan atau pusat operasi keselamatan.
+- Penggantian semua sistem aset, sumber manusia atau pengurusan dokumen organisasi.
+- Kelulusan risiko automatik atau pengisytiharan pematuhan tanpa penilaian pegawai.
+- Integrasi dan akses awam yang belum dikenal pasti keperluannya.
+- Jaminan pensijilan ISO melalui pembelian atau pembangunan aplikasi.
+
+## 15. Soalan untuk memperkemas briefing
+
+Keutamaan pertama: proses manual mana paling membebankan sekarang — dokumen, penilaian risiko, tindakan audit atau penyediaan laporan?
+
+Pengesahan susulan:
+1. Adakah ISMS sudah mempunyai pensijilan, dan apakah skop rasminya?
+2. Bahagian mana sesuai untuk rintis dan siapa pemilik projek?
+3. Apakah borang serta templat sebenar yang perlu dikekalkan atau diperbaiki?
+4. Siapa menyediakan, menyemak, meluluskan dan menerima risiko?
+5. Apakah kaedah penilaian risiko dan polisi pengendalian maklumat yang sedang digunakan?
+6. Berapa pengguna, jumlah rekod dan keperluan hos atau integrasi?
+7. Apakah kekangan bajet, tarikh sasaran dan sokongan selepas pelaksanaan?
+
+## 16. Langkah seterusnya
+
+Semak briefing ini bersama pemilik proses, pilih skop rintis dan teliti contoh rekod manual. Kemudian sediakan spesifikasi modul, medan borang, matriks akses serta aliran kelulusan untuk semakan sebelum pembangunan.
+
+Keputusan semasa: platform modular ialah cadangan awal; skop organisasi, aturan kelulusan dan teknologi masih terbuka untuk pembetulan.
+
+## 17. Keputusan susulan pengguna — 2 Oktober 2026
+
+- Gunakan Laravel dengan spesifikasi stabil terkini, dijalankan dalam Laragon dahulu.
+- Sediakan mockup untuk review sebelum implementasi real-case.
+- Paparan pertama disahkan untuk peranan Penyelaras ISMS.
+- Sertakan landing page sebagai pintu masuk sistem.
+- Teruskan semua kerja dalam folder projek Laragon `C:\laragon\www\ISMS`.
+- Cadangan teknikal: Laravel 13.x, PHP >=8.3, MySQL 8.4 dan Blade/Vite; lihat `docs/laravel-spec.md`.
+- Mockup semasa menggunakan HTML/CSS/JavaScript dan data sintetik. Ia bahan review, belum aplikasi Laravel atau rekod operasi sebenar.

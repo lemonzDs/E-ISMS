@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-02T16:38:28.145Z",
+  "title": "Design System: e-ISMS SUK Pahang — mockup v0.2",
+  "extensions": {
+    "colorMeta": {
+      "navy": {
+        "role": "primary",
+        "displayName": "navy"
+      },
+      "blue": {
+        "role": "secondary",
+        "displayName": "blue"
+      },
+      "gold": {
+        "role": "secondary",
+        "displayName": "gold"
+      },
+      "canvas": {
+        "role": "neutral",
+        "displayName": "canvas"
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "surface"
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "ink"
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "muted"
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "line"
+      },
+      "blue-soft": {
+        "role": "neutral",
+        "displayName": "blue-soft"
+      },
+      "danger": {
+        "role": "semantic",
+        "displayName": "danger"
+      },
+      "danger-soft": {
+        "role": "neutral",
+        "displayName": "danger-soft"
+      },
+      "warning": {
+        "role": "semantic",
+        "displayName": "warning"
+      },
+      "warning-soft": {
+        "role": "neutral",
+        "displayName": "warning-soft"
+      },
+      "success": {
+        "role": "semantic",
+        "displayName": "success"
+      },
+      "success-soft": {
+        "role": "neutral",
+        "displayName": "success-soft"
+      },
+      "focus": {
+        "role": "semantic",
+        "displayName": "focus"
+      }
+    },
+    "typographyMeta": {
+      "sans": {
+        "displayName": "Body",
+        "purpose": "Local office text, 14px/1.55."
+      },
+      "display": {
+        "displayName": "Heading",
+        "purpose": "Segoe UI, 600 weight; Operate portal and workspace."
+      }
+    },
+    "shadows": [
+      {
+        "name": "dialog",
+        "value": "0 18px 60px #142D4033",
+        "purpose": "Native modal separation."
+      },
+      {
+        "name": "toast",
+        "value": "0 5px 25px #142D4026",
+        "purpose": "Transient feedback."
+      }
+    ],
+    "motion": [
+      {
+        "name": "button-feedback",
+        "value": "background 150ms, color 150ms",
+        "purpose": "Hover feedback; disabled under reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "workspace-compact",
+        "value": "1200px"
+      },
+      {
+        "name": "dashboard-stack",
+        "value": "1050px"
+      },
+      {
+        "name": "workspace-mobile",
+        "value": "760px"
+      },
+      {
+        "name": "portal-compact",
+        "value": "1100px"
+      },
+      {
+        "name": "portal-stack",
+        "value": "800px"
+      },
+      {
+        "name": "portal-mobile",
+        "value": "580px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Direct demo or record action.",
+      "html": "<button class=\"ds-primary\">Buka demo</button>",
+      "css": ".ds-primary{font-family:Segoe UI,sans-serif;font-size:12px;font-weight:600;min-height:40px;padding:9px 14px;border:1px solid var(--navy,#163A50);border-radius:4px;background:var(--navy,#163A50);color:white;cursor:pointer;transition:background 150ms,color 150ms}.ds-primary:hover{background:#285570}.ds-primary:focus-visible{outline:3px solid var(--focus,#2177AD);outline-offset:3px}.ds-primary:active{transform:translateY(1px)}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none}}"
+    },
+    {
+      "name": "Text field",
+      "kind": "input",
+      "description": "Visible label and explicit focus.",
+      "html": "<label class=\"ds-label\" for=\"ds-title\">Tajuk risiko</label><input class=\"ds-input\" id=\"ds-title\" value=\"Risiko contoh\">",
+      "css": ".ds-label{font-family:Segoe UI,sans-serif;display:block;font-size:13px;font-weight:600;margin-bottom:7px}.ds-input{font-family:Segoe UI,sans-serif;font-size:14px;padding:11px 12px;border:1px solid #B6C7D2;border-radius:4px;background:white;color:var(--ink,#1C2E3A)}.ds-input:focus-visible{outline:3px solid var(--focus,#2177AD);outline-offset:3px}"
+    },
+    {
+      "name": "Status badge",
+      "kind": "chip",
+      "description": "Synthetic status with text.",
+      "html": "<span class=\"ds-badge\">Lewat</span>",
+      "css": ".ds-badge{font-family:Segoe UI,sans-serif;display:inline-flex;font-size:11px;font-weight:600;line-height:1.45;padding:3px 7px;border-radius:3px;color:var(--danger,#A53730);background:var(--danger-soft,#FAEEEC)}"
+    },
+    {
+      "name": "Workspace navigation",
+      "kind": "nav",
+      "description": "Light sidebar with strong current-route contrast.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link\" href=\"#overview\" aria-current=\"page\">Gambaran keseluruhan</a></nav>",
+      "css": ".ds-nav{padding:14px;background:#ECF1F4;border-right:1px solid var(--line,#D4DEE4)}.ds-nav-link{font-family:Segoe UI,sans-serif;display:flex;align-items:center;min-height:44px;padding:11px 14px;font-size:13px;font-weight:600;background:var(--navy,#163A50);color:white;border-radius:5px;text-decoration:none}.ds-nav-link:hover{background:#285570}.ds-nav-link:focus-visible{outline:3px solid var(--focus,#2177AD);outline-offset:3px}"
+    },
+    {
+      "name": "Register panel",
+      "kind": "card",
+      "description": "Border grouping for records; no ambient elevation.",
+      "html": "<section class=\"ds-panel\"><h2 class=\"ds-title\">Tindakan untuk disusuli</h2><p class=\"ds-copy\">Rekod demonstrasi sahaja.</p></section>",
+      "css": ".ds-panel{padding:21px 23px 19px;border:1px solid var(--line,#D4DEE4);border-radius:var(--radius,8px);background:white;color:var(--ink,#1C2E3A)}.ds-title{font-family:Segoe UI,sans-serif;font-size:18px;font-weight:600;line-height:1.45;margin:0}.ds-copy{font-family:Segoe UI,sans-serif;font-size:12px;color:var(--muted,#546570);margin:6px 0 0}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Meja urus setia",
+    "overview": "User-approved direction: Formal, ringkas dan berorientasikan kerja. Both portal and coordinator workspace use Operate mode: registers, ownership, dates and next actions provide the hierarchy.",
+    "keyCharacteristics": [
+      "Plain wordmark",
+      "Light sidebar",
+      "Ledger summary",
+      "Synthetic attention register",
+      "Simple module directory"
+    ],
+    "rules": [],
+    "dos": [
+      "Do show ownership, status and target dates together.",
+      "Do retain text labels for statuses and meaningful action destinations.",
+      "Do distinguish synthetic records from official operational evidence."
+    ],
+    "donts": [
+      "Don't add decorative identity marks, card grids or promotional claims to routine work surfaces.",
+      "Don't imply live authentication, official brand approval or compliance certification."
+    ]
+  }
+}
