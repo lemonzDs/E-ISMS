@@ -1,0 +1,8 @@
+@extends('layouts.app')
+@section('title','Portal')
+@section('content')
+<div class="portal"><header><span class="portal-brand">e-ISMS <small class="muted">/ SUK Pahang</small></span><a class="work-button" href="{{ auth()->check() ? (auth()->user()->role === 'admin' ? route('admin.users') : route('documents.index')) : route('login') }}">{{ auth()->check() ? 'Buka ruang kerja' : 'Log masuk' }}</a></header>
+<section class="portal-intro"><div><span class="eyebrow">Sistem Pengurusan Keselamatan Maklumat</span><h1>Pengurusan keselamatan maklumat.</h1><p>Daftar, semak dan luluskan dokumen melalui satu rekod kerja. Setiap versi, ulasan dan keputusan boleh dijejaki.</p><a class="work-button" href="{{ route('login') }}">Masuk ke ruang kerja</a></div><aside class="portal-aside"><h2>Fasa rintis · Kawalan dokumen</h2><p>Akses mengikut peranan dan bahagian. Fail disimpan secara private dan versi diluluskan dikekalkan.</p><p>Gunakan data contoh sahaja. Proses kelulusan ini ialah cadangan untuk semakan pengguna.</p></aside></section>
+<section aria-labelledby="workflow-heading"><h2 id="workflow-heading">Aliran kerja dokumen</h2><div class="portal-steps"><div><strong>01 · Sediakan</strong>Pegawai mendaftar dokumen dan fail sebagai draf.</div><div><strong>02 · Semak</strong>Penyelaras menyemak atau mengembalikan dengan ulasan.</div><div><strong>03 · Luluskan</strong>Pelulus berasingan merekodkan keputusan.</div><div><strong>04 · Jejaki</strong>Versi dan jejak audit kekal dalam rekod dokumen.</div></div></section>
+<footer>Pejabat Setiausaha Kerajaan Pahang · Aplikasi pembangunan tempatan. Akses akaun melalui pentadbir; tiada pendaftaran awam.</footer></div>
+@endsection

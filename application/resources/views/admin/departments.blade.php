@@ -1,0 +1,5 @@
+@extends('layouts.app')
+@section('title','Bahagian')
+@section('content')
+<div class="work-heading"><div><span class="eyebrow">Pentadbiran</span><h1>Bahagian</h1><p class="muted">Gunakan bahagian contoh sehingga struktur organisasi disahkan.</p></div></div><section class="work-panel"><table class="work-table"><thead><tr><th>Kod</th><th>Nama bahagian</th></tr></thead><tbody>@foreach($departments as $department)<tr><td>{{ $department->code }}</td><td>{{ $department->name }}</td></tr>@endforeach</tbody></table></section><section class="work-panel work-form"><h2>Tambah bahagian</h2><form method="post" action="{{ route('admin.departments.store') }}">@csrf<div class="work-field"><label for="code">Kod bahagian</label><input id="code" name="code" value="{{ old('code') }}" maxlength="30" required></div><div class="work-field"><label for="name">Nama bahagian</label><input id="name" name="name" value="{{ old('name') }}" maxlength="255" required></div><button class="work-button">Tambah bahagian</button></form></section>
+@endsection

@@ -28,3 +28,11 @@ Target WCAG 2.2 AA; semantic navigation/table/forms, visible focus, skip link, t
 
 ## Production follow-up
 Persisted create/edit success returns to owning list with previous list state; server pagination and enforced permissions. Real transition authority and retention remain pending. No client-side behavior in this demo is a security boundary.
+
+## Laravel local pilot
+
+Separate routes in `application/`: portal, login, document list/create/detail/version/download, admin accounts and departments. Server policies enforce role and department on lists/details/files/mutations; client visibility is not authorization. Admin has no document approval/read permission. Sessions regenerate on login and invalidate on logout/deactivation. No public registration.
+
+Document creation and version edits redirect to the owning detail to expose status and next action; lists paginate 15 records, retaining search/status in query parameters. This detail-first destination is specific to document workflow; the mockup risk flow is unchanged. Success is announced; validation retains scalar fields, never passwords/files. File input must be reselected after a validation error. Conflict 409 explains that nothing was saved and leads to the register. Approved versions are immutable via UI/API; new versions begin as draft. Return requires a reason. Review and approval must have distinct actors from the owner.
+
+Pending owner role/department changes that remove capability are rejected. Deactivation remains permitted and the admin edit form shows pending counts/recovery guidance. Owner transfer is not implemented. Native form controls, visible focus, skip link and labelled table scrolling support keyboard/mobile. No full WCAG certification is claimed.

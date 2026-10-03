@@ -1,0 +1,6 @@
+# Serve Laravel using application/public as the document root.
+# Protect project files if Laragon's default www root is used accidentally.
+<IfModule mod_authz_core.c>
+    Require all denied
+</IfModule>
+Options -Indexes

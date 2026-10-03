@@ -4,7 +4,7 @@ Tarikh: 3 Oktober 2026
 Status: cadangan susunan pembangunan selepas review mockup; bukan komitmen jadual atau skop yang telah disahkan organisasi.
 
 ## Kedudukan semasa
-Landing page dan ruang kerja Penyelaras ISMS ialah mockup. Carian, penapis, butiran rekod, borang risiko, simulasi tindakan dan eksport menggunakan data sintetik. Login, pangkalan data, storan bukti dan kelulusan rasmi belum dilaksanakan.
+Mockup asal dikekalkan. Selepas pengguna meluluskan kesinambungan, `application/` kini menyediakan Laravel, login/peranan/bahagian, database, fail dokumen private, versi, semakan/kelulusan cadangan dan audit. Rintis menggunakan data sintetik; kelulusan rasmi organisasi belum disahkan. Risiko, tindakan dan SoA masih mockup. Bukti semakan: `docs/review/laravel/verification.md`.
 
 Keutamaan seterusnya ialah menjadikan proses teras berfungsi dan boleh dipercayai dalam Laravel di Laragon. Penambahan modul baharu datang selepas asas ini.
 

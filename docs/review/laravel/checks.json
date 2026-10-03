@@ -1,0 +1,18 @@
+{
+  "base": "http://127.0.0.1:8099",
+  "checks": [
+    "Landing desktop/mobile",
+    "CSRF and private project/storage paths blocked",
+    "Officer scoped register and search/reset",
+    "Real private upload and mobile submit",
+    "Return, correction, resubmit and independent review",
+    "Independent approval, audit and authenticated download",
+    "Other department denied through direct URL",
+    "Approved immutable version retained with new draft",
+    "Mobile register and form fit",
+    "Admin creates department/account, deactivates account and inactive login is denied",
+    "No browser JavaScript errors"
+  ],
+  "errors": [],
+  "note": "Synthetic E2E record retained in development DB; no real data."
+}

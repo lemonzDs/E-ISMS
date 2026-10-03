@@ -17,3 +17,14 @@
 Thumbs.db
 .DS_Store
 *.log
+/docs/local-demo-access.md
+/application/.env.*
+!/application/.env.example
+/application/database/*.sqlite*
+/application/storage/app/**
+!/application/storage/app/.gitignore
+!/application/storage/app/private/
+!/application/storage/app/private/.gitignore
+!/application/storage/app/public/
+!/application/storage/app/public/.gitignore
+/application/storage/framework/testing/**

@@ -1,11 +1,11 @@
 # Cadangan pelaksanaan Laravel — untuk review
 
-Status: cadangan teknikal, belum menjadi sistem operasi sebenar.
+Status: asas Laravel dan workflow dokumen rintis telah dibina dalam `application/`; modul lain masih cadangan. Belum menjadi sistem operasi sebenar. Lihat `docs/phase-1-design.md`, `docs/laragon-setup.md` dan `docs/review/laravel/verification.md`.
 
 ## Sasaran
 Laravel 13.x, PHP 8.3 minimum, MySQL 8.4, Blade, CSS melalui Vite dan JavaScript ringan. Gunakan patch stabil terkini yang serasi semasa pemasangan serta simpan `composer.lock` dan lockfile npm. Laravel 13 disahkan melalui [nota keluaran rasmi](https://laravel.com/framework/docs/releases) dan [keperluan pemasangan](https://laravel.com/framework/docs/deployment) pada 2 Oktober 2026.
 
-Laragon tempatan: PHP 8.3.30 disahkan melalui CLI; folder MySQL 8.4.3 tersedia. PHP dan Composer tidak berada dalam PATH sesi semasa. Sambungan DB, ekstensi PHP, konfigurasi Apache dan Composer akan disahkan semasa setup aplikasi. Tiada servis sedia ada diubah dalam fasa mockup.
+Laragon tempatan: PHP 8.3.30 dan MySQL 8.4.3 disahkan. Laravel 13.34.0 dan dependency terkunci telah dipasang. MySQL sedia ada dimulakan pada localhost; database pembangunan dan ujian dengan credential berasingan telah diuji. Preview Laravel menggunakan PHP port 8099 dan document root public; konfigurasi Apache belum diubah atau diuji.
 
 ## Bentuk aplikasi
 Monolit modular Laravel, sesuai untuk operasi dalaman dan penyelenggaraan pasukan kecil. Blade mengelakkan keperluan pelayan frontend berasingan selepas build. Modul: Identity, Documents, Risk, Actions, Controls, Reporting dan Audit. Gunakan Form Requests, Policies, Eloquent, migrations, transactions dan application services untuk perubahan status; bukan semua logik dalam controller.

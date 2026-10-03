@@ -1,4 +1,14 @@
-# e-ISMS SUK Pahang — mockup review
+# e-ISMS SUK Pahang — Laravel dan mockup
+
+## Fasa semasa: rintis Laravel
+
+`application/` kini mengandungi Laravel 13.34.0, PHP >=8.3, MySQL 8.4, Blade/Vite dan aliran kawalan dokumen. Login dalaman, akaun/bahagian, daftar dokumen, fail private, versi, semakan, kelulusan dan audit telah dibina untuk data contoh. Aturan ini belum diluluskan sebagai proses operasi SUK Pahang.
+
+Preview tempatan: `http://127.0.0.1:8099/`. Jalankan `./scripts/Start-ISMS.ps1` dari PowerShell selepas MySQL Laragon dimulakan. Akaun demo dan kata laluan tempatan berada dalam `docs/local-demo-access.md` yang diabaikan Git. Jangan gunakan akaun demo untuk data sebenar.
+
+Panduan pemasangan: [docs/laragon-setup.md](docs/laragon-setup.md). Spesifikasi rintis: [docs/phase-1-design.md](docs/phase-1-design.md). Laravel document root mesti `application/public`; root projek dilindungi `.htaccess` apabila Apache digunakan. `.env`, fail dokumen dan pangkalan data tempatan tidak dimasukkan dalam Git.
+
+## Mockup asal untuk rujukan
 
 Fasa semasa: mockup v0.2 untuk Penyelaras ISMS, dengan arah formal, ringkas dan berorientasikan kerja. Portal memaparkan daftar perhatian dan direktori modul; ruang kerja menggunakan navigasi cerah dan ringkasan berformat daftar. Semua data adalah rekaan. Tiada login, database, upload atau kelulusan sebenar; perubahan hanya kekal sehingga halaman dimuat semula.
 
@@ -6,7 +16,7 @@ Fasa semasa: mockup v0.2 untuk Penyelaras ISMS, dengan arah formal, ringkas dan 
 
 Buka `mockup/landing.html` untuk landing page dan `mockup/index.html` untuk ruang kerja. Kedua-duanya boleh dibuka terus dalam browser tanpa pemasangan dependency atau sambungan Internet.
 
-Jika Apache Laragon sedang berjalan dengan document root lalai, gunakan `http://localhost/ISMS/`; halaman masuk akan membawa anda ke landing page. Jika virtual host `isms.test` sudah didaftarkan kepada folder projek ini, gunakan `http://isms.test/`.
+Mockup asal masih boleh dibuka terus atau dilayan pada port 8098. Root Apache projek kini dilindungi untuk mengelakkan fail aplikasi terdedah. Gunakan document root `application/public` untuk Laravel; virtual host Laragon belum diubah secara automatik.
 
 Pilihan pelayan tempatan dari PowerShell di folder projek:
 
@@ -27,7 +37,7 @@ Buka `http://127.0.0.1:8098/landing.html`. Pelayan ini untuk preview tempatan sa
 
 ## Arah Laravel
 
-Laravel 13.x + PHP >=8.3 + MySQL 8.4 + Blade/Vite, dicadangkan untuk implementasi selepas review mockup. Lihat `docs/laravel-spec.md` untuk seni bina, fasa, kawalan akses dan pengesahan. Kod mockup ialah bahan review, bukan sistem Laravel siap.
+Laravel 13.34.0 + PHP >=8.3 + MySQL 8.4 + Blade/Vite kini dipasang dalam `application/`; `composer.lock` dan `package-lock.json` dikunci. Modul risiko, tindakan dan SoA masih mockup. Lihat `docs/laravel-spec.md` untuk seni bina dan fasa lanjutan.
 
 `.briefing` kekal sebagai cadangan urusan. `PRODUCT.md`, `DESIGN.md` dan `UX-CONTRACT.md` merekodkan keputusan mockup serta perkara belum disahkan.
 

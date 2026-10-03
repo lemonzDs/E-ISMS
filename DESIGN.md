@@ -83,3 +83,7 @@ Attention-table links open exact synthetic records via the record query paramete
 - Don't imply live authentication, official brand approval or compliance certification.
 
 Visual direction is user-selected; the v0.2 implementation remains a review prototype. Real workflow authority, data and production security remain pending.
+
+## Laravel pilot extension
+
+`application/resources/css/app.css` imports `mockup/styles.css` through Vite; the approved palette remains canonical there. Laravel adds work-shell, forms, document registers, status labels and server feedback without independent token copies. Blade labels and errors are Malay, timestamps display Asia/Kuala_Lumpur, and authenticated views show the actor/role/department. Routes now contain real local auth/persistence, while operational approval authority is still pending. The app has no remote fonts or font dependency; Segoe UI remains the local stack.
