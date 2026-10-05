@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-02T16:38:28.145Z",
-  "title": "Design System: e-ISMS SUK Pahang — mockup v0.2",
+  "generatedAt": "2026-10-03T15:52:41.1434755Z",
+  "title": "Design System: e-ISMS SUK Pahang — workspace and corporate public portal",
   "extensions": {
     "colorMeta": {
       "navy": {
@@ -67,6 +67,18 @@
       "focus": {
         "role": "semantic",
         "displayName": "focus"
+      },
+      "cp-navy": {
+        "role": "primary",
+        "displayName": "Public portal deep navy"
+      },
+      "cp-gold": {
+        "role": "secondary",
+        "displayName": "Public portal brass"
+      },
+      "cp-muted": {
+        "role": "neutral",
+        "displayName": "Public portal supporting text"
       }
     },
     "typographyMeta": {
@@ -96,6 +108,11 @@
         "name": "button-feedback",
         "value": "background 150ms, color 150ms",
         "purpose": "Hover feedback; disabled under reduced motion."
+      },
+      {
+        "name": "corporate-portal-access",
+        "value": "background 150ms",
+        "purpose": "Public access hover; disabled under reduced motion."
       }
     ],
     "breakpoints": [
@@ -122,6 +139,18 @@
       {
         "name": "portal-mobile",
         "value": "580px"
+      },
+      {
+        "name": "corporate-portal-compact",
+        "value": "1000px"
+      },
+      {
+        "name": "corporate-portal-mobile",
+        "value": "700px"
+      },
+      {
+        "name": "corporate-portal-wide",
+        "value": "1700px"
       }
     ]
   },
@@ -165,23 +194,39 @@
   ],
   "narrative": {
     "northStar": "Meja urus setia",
-    "overview": "User-approved direction: Formal, ringkas dan berorientasikan kerja. Both portal and coordinator workspace use Operate mode: registers, ownership, dates and next actions provide the hierarchy.",
+    "overview": "User-approved direction: Formal, ringkas dan berorientasikan kerja. The historical mockup portal and coordinator workspace use Operate mode: registers, ownership, dates and next actions provide the hierarchy. The Laravel public landing is a scoped corporate variant. Workspace and historical mockup tokens remain intact.",
     "keyCharacteristics": [
       "Plain wordmark",
       "Light sidebar",
       "Ledger summary",
       "Synthetic attention register",
-      "Simple module directory"
+      "Simple module directory",
+      "Official crest, white masthead and deep blue architectural hero on the public portal.",
+      "Restrained brass access action and rectangular public portal controls."
     ],
-    "rules": [],
+    "rules": [
+      {
+        "name": "The Scoped Portal Rule",
+        "body": "Corporate portal tokens apply only to the public landing; workspace tokens remain canonical for authenticated work.",
+        "section": "colors"
+      },
+      {
+        "name": "The Honest Image Rule",
+        "body": "Identify the PPSAS architectural illustration in alternative text and retain provenance in project documentation.",
+        "section": "components"
+      }
+    ],
     "dos": [
       "Do show ownership, status and target dates together.",
       "Do retain text labels for statuses and meaningful action destinations.",
-      "Do distinguish synthetic records from official operational evidence."
+      "Do distinguish synthetic records from official operational evidence.",
+      "Do keep corporate portal styles scoped to the public landing.",
+      "Do retain crest and architectural illustration provenance in project documentation."
     ],
     "donts": [
       "Don't add decorative identity marks, card grids or promotional claims to routine work surfaces.",
-      "Don't imply live authentication, official brand approval or compliance certification."
+      "Don't imply live authentication in historical mockups, official brand approval or compliance certification.",
+      "Don't present simulated statistics as live organisational results."
     ]
   }
 }
