@@ -4,7 +4,7 @@ Tarikh: 3 Oktober 2026
 Status: cadangan susunan pembangunan selepas review mockup; bukan komitmen jadual atau skop yang telah disahkan organisasi.
 
 ## Kedudukan semasa
-Mockup asal dikekalkan. Selepas pengguna meluluskan kesinambungan, `application/` kini menyediakan Laravel, login/peranan/bahagian, database, fail dokumen private, versi, semakan/kelulusan cadangan dan audit. Rintis menggunakan data sintetik; kelulusan rasmi organisasi belum disahkan. Risiko, tindakan dan SoA masih mockup. Bukti semakan: `docs/review/laravel/verification.md`.
+Mockup asal dikekalkan. `application/` menyediakan Laravel, login/peranan/bahagian, database, fail dokumen private, versi, semakan/kelulusan cadangan dan audit. Pada 9 Oktober 2026, daftar risiko, penilaian contoh 5×5, tindakan rawatan, bukti PDF private, pengesahan bebas dan penilaian risiko baki turut tersedia. Rintis menggunakan data sintetik; kaedah dan kuasa rasmi organisasi belum disahkan. SoA dan keputusan penerimaan risiko masih belum dilaksanakan.
 
 Keutamaan seterusnya ialah menjadikan proses teras berfungsi dan boleh dipercayai dalam Laravel di Laragon. Penambahan modul baharu datang selepas asas ini.
 

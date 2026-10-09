@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\AuditEvent;
 use App\Models\Department;
 use App\Models\Document;
+use App\Models\Risk;
+use App\Models\RiskAction;
 use App\Models\User;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -61,6 +63,12 @@ class AdminController extends Controller
         DB::transaction(function () use ($request, $user, $data) {
             User::where('role', 'admin')->where('is_active', true)->lockForUpdate()->get();
             $locked = User::lockForUpdate()->findOrFail($user->id);
+            if (RiskAction::where('assignee_id', $locked->id)->where('status', '!=', 'verified')->exists() && ((int) $data['department_id'] !== $locked->department_id || ! in_array($data['role'], ['officer', 'coordinator'], true))) {
+                throw ValidationException::withMessages(['role' => 'Pengguna mempunyai tindakan rawatan belum selesai. Tukar pelaksana tindakan dahulu sebelum menukar bahagian atau peranan.']);
+            }
+            if (Risk::where('owner_id', $locked->id)->exists() && ((int) $data['department_id'] !== $locked->department_id || ! in_array($data['role'], ['officer', 'coordinator'], true))) {
+                throw ValidationException::withMessages(['role' => 'Pengguna masih memiliki risiko. Pemindahan pemilik risiko perlu diselesaikan sebelum menukar bahagian atau peranan.']);
+            }
             $pending = Document::where('owner_id', $locked->id)->whereHas('latestVersion', fn ($query) => $query->where('status', '!=', 'approved'))->lockForUpdate()->get();
             if ($pending->isNotEmpty()) {
                 if ((int) $data['department_id'] !== $locked->department_id) {

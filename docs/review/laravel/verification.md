@@ -1,5 +1,15 @@
 # Pengesahan fasa Laravel — 3 Oktober 2026
 
+## Tambahan risiko dan rawatan — 9 Oktober 2026
+
+- Suite lengkap SQLite dan MySQL: **37 ujian lulus, 242 assertions** setiap suite. MySQL menggunakan database ujian berasingan.
+- Perlindungan diuji: akses silang bahagian/admin, manipulasi skor/pemilik, status dan versi lapuk, PATCH, pengesahan sendiri, bukti PDF, sejarah penghantaran semula, kitaran lama, tindakan belum selesai dan ketepatan/ketidakabsahan penilaian baki selepas perubahan rawatan.
+- Build Vite dan Pint lulus. Semakan bebas kod rawatan tidak menemukan isu tambahan.
+- `node scripts/check-risk-treatment.cjs`: aliran browser lengkap daftar/semak risiko → tetapkan tindakan → muat naik dan muat turun bukti PDF → pengesahan penyelaras berasingan → risiko baki 2/25 lulus. Paparan 390px tiada limpahan mendatar atau ralat JavaScript. Bukti dalam `docs/review/treatment/`; rekod DEMO E2E sintetik dikekalkan di database pembangunan.
+- Matriks 5×5 ialah contoh berversi yang disimpan bersama rekod, bukan kaedah rasmi SUK. Tiada keputusan penerimaan risiko, SoA atau pemeriksaan malware dalam skop ini.
+
+## Bukti asas dokumen
+
 Persekitaran: Laravel 13.34.0, PHP Laragon 8.3.30, MySQL 8.4.3, Node 24.21.0, Vite 8.3.2. Preview PHP di `127.0.0.1:8099`, document root `application/public`. Apache/vhost belum diuji.
 
 - `php artisan test`: **22 lulus, 98 assertions**, SQLite in-memory.

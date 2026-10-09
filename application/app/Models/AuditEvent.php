@@ -9,7 +9,7 @@ class AuditEvent extends Model
 {
     public $timestamps = false;
 
-    protected $fillable = ['actor_id', 'document_id', 'document_version_id', 'action', 'before', 'after', 'comment', 'created_at'];
+    protected $fillable = ['actor_id', 'document_id', 'document_version_id', 'risk_id', 'action', 'before', 'after', 'comment', 'created_at'];
 
     protected function casts(): array
     {

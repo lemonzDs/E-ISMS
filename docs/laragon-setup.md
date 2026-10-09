@@ -42,6 +42,6 @@ Browser: `node scripts/check-laravel.cjs` dari root. Playwright perlu tersedia; 
 
 ## Batasan sebelum real-case
 
-Perlu sahkan kuasa pelulus, klasifikasi/retensi, borang sebenar, pemindahan pemilik dan konfigurasi operasi. Pemilik dengan dokumen pending tidak boleh ditukar bahagian atau kepada peranan yang menghalang penyediaan; deactivation dibenarkan, kerja menunggu reactivation. Tiada pemindahan pemilik, pendaftaran awam, self-service reset password, e-mel keluar, pemeriksaan malware, import rekod atau modul risiko sebenar dalam fasa ini. Pentadbir boleh menetapkan semula kata laluan melalui pengurusan akaun.
+Perlu sahkan kuasa pelulus, klasifikasi/retensi, borang sebenar, matriks risiko, pemindahan pemilik dan konfigurasi operasi. Pemilik dokumen pending atau risiko tidak boleh ditukar kepada bahagian/peranan yang menghalang kerja; deactivation dibenarkan. Pelaksana tindakan terbuka perlu ditukar dalam pelan rawatan sebelum perubahan bahagian/peranan. Pemilik risiko boleh menilai risiko baki selepas semua tindakan disahkan penyelaras yang bukan pemilik atau pelaksana. Pemindahan pemilik risiko, SoA, penerimaan risiko rasmi, pendaftaran awam, reset password kendiri, e-mel keluar, pemeriksaan malware dan import rekod belum tersedia. Pentadbir boleh menetapkan semula kata laluan melalui pengurusan akaun.
 
 Versi diluluskan tidak boleh diedit melalui aplikasi. Ini bukan storan WORM atau perlindungan terhadap pentadbir database. Audit transaksi tidak bermaksud pensijilan ISO. Sandaran/pemulihan dan UAT operasi ialah fasa berikutnya.

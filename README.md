@@ -2,7 +2,9 @@
 
 ## Fasa semasa: rintis Laravel
 
-`application/` kini mengandungi Laravel 13.34.0, PHP >=8.3, MySQL 8.4, Blade/Vite dan aliran kawalan dokumen. Login dalaman, akaun/bahagian, daftar dokumen, fail private, versi, semakan, kelulusan dan audit telah dibina untuk data contoh. Aturan ini belum diluluskan sebagai proses operasi SUK Pahang.
+`application/` kini mengandungi Laravel 13.34.0, PHP >=8.3, MySQL 8.4, Blade/Vite, kawalan dokumen serta daftar risiko dan rawatan. Login dalaman, akaun/bahagian, fail private, versi, semakan, kelulusan dokumen dan audit tersedia untuk data contoh. Aturan ini belum diluluskan sebagai proses operasi SUK Pahang.
+
+Modul risiko (`/risks`) menyediakan penilaian contoh 5×5, carian/penapis, semakan penyelaras dan sejarah penilaian. Dari butiran risiko, buka **Pelan rawatan & risiko baki** untuk menetapkan pelaksana/tarikh sasaran, menghantar bukti PDF private (maksimum 10 MB), mengesahkan atau mengembalikan tindakan dan menilai risiko baki selepas semua tindakan disahkan. Membuka semula atau mengubah pelan membatalkan status terkini penilaian baki terdahulu; sejarah dikekalkan. Semakan penilaian dan pengesahan tindakan tidak bermaksud penerimaan risiko. Kaedah rasmi dan kuasa penerimaan SUK masih perlu disahkan.
 
 Preview tempatan: `http://127.0.0.1:8099/`. Jalankan `./scripts/Start-ISMS.ps1` dari PowerShell selepas MySQL Laragon dimulakan. Akaun demo dan kata laluan tempatan berada dalam `docs/local-demo-access.md` yang diabaikan Git. Jangan gunakan akaun demo untuk data sebenar.
 
@@ -39,7 +41,7 @@ Buka `http://127.0.0.1:8098/landing.html`. Pelayan ini untuk preview tempatan sa
 
 ## Arah Laravel
 
-Laravel 13.34.0 + PHP >=8.3 + MySQL 8.4 + Blade/Vite kini dipasang dalam `application/`; `composer.lock` dan `package-lock.json` dikunci. Modul risiko, tindakan dan SoA masih mockup. Lihat `docs/laravel-spec.md` untuk seni bina dan fasa lanjutan.
+Laravel 13.34.0 + PHP >=8.3 + MySQL 8.4 + Blade/Vite dipasang dalam `application/`; dependency dikunci. Risiko dan tindakan kini berfungsi dalam rintis Laravel; SoA dan keputusan penerimaan risiko belum dilaksanakan. Selepas kemas kini kod, jalankan `php artisan migrate` dan `npm run build` dari `application/`. Data contoh risiko boleh ditambah dengan `php artisan db:seed --class=RiskDemoSeeder` selepas `DemoSeeder`.
 
 `.briefing` kekal sebagai cadangan urusan. `PRODUCT.md`, `DESIGN.md` dan `UX-CONTRACT.md` merekodkan keputusan mockup serta perkara belum disahkan.
 

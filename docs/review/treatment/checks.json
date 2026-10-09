@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "riskUrl": "http://127.0.0.1:8099/risks/2",
+  "checks": [
+    "assessment reviewed",
+    "action assigned",
+    "private PDF uploaded/downloaded",
+    "independent verification",
+    "residual score 2",
+    "mobile no overflow",
+    "no JS errors"
+  ]
+}
