@@ -69,7 +69,22 @@ Asas akses, aliran dokumen, risiko/rawatan, halaman log masuk korporat dan penda
 
 Notifikasi dalam aplikasi kini tersedia bagi pendaftaran/pengaktifan akaun, dokumen, risiko dan rawatan. Menu notifikasi menyokong penapis belum dibaca, penandaan dibaca dan pembukaan rekod dengan semakan akses semasa. Peringatan rawatan hampir/lewat sasaran dijalankan semasa pelancar bermula dan dijadualkan 08:00 waktu Malaysia, dengan rekod pencegahan pendua. Pelancar dan MySQL mesti berjalan; e-mel belum diaktifkan.
 
-Baki seterusnya: e-mel dan eskalasi selepas tetapan serta penerima disahkan; keputusan penerimaan risiko dan SoA selepas aturan organisasi dipersetujui; laporan/eksport, import rekod manual, UAT, sandaran serta ujian pemulihan. Untuk modul baharu selepas MVP, utamakan **audit dalaman dan tindakan pembetulan** kerana ia menggunakan semula dokumen, bukti, pemilik dan tindakan yang sudah dibina.
+Laporan dan eksport CSV kini tersedia di `/reports`: status versi dokumen terkini, tahap risiko awal, tindakan kitaran semasa dan senarai tindakan lewat. Penapis bahagian serta eksport mengikut akses; laporan masih berdasarkan rekod semasa, belum snapshot berversi.
+
+Baki seterusnya: e-mel dan eskalasi selepas tetapan serta penerima disahkan; keputusan penerimaan risiko dan SoA selepas aturan organisasi dipersetujui; import rekod manual, UAT, sandaran serta ujian pemulihan. Untuk modul baharu selepas MVP, utamakan **audit dalaman dan tindakan pembetulan** kerana ia menggunakan semula dokumen, bukti, pemilik dan tindakan yang sudah dibina.
+
+### Cadangan modul audit dalaman
+
+Aliran dicadangkan: pelan audit → persediaan/skop → pelaksanaan dan bukti → dapatan → tindakan pembetulan → semakan keberkesanan → penutupan atau pembukaan semula.
+
+- Pelan audit: objektif, skop bahagian/proses, tarikh, ketua audit dan juruaudit.
+- Senarai semak: kriteria serta rujukan polisi/kawalan, keputusan pemeriksaan dan bukti private.
+- Dapatan: keadaan sebenar, kriteria, kesan, kategori/keutamaan dan pemilik respons.
+- Tindakan pembetulan: analisis punca, pembetulan segera, tindakan mencegah berulang, pelaksana, sasaran dan bukti.
+- Susulan: juruaudit bebas menyemak keberkesanan; bukti dihantar tidak menutup dapatan secara automatik.
+- Laporan audit: ringkasan dapatan, respons pengurusan, kelulusan laporan dan sejarah perubahan.
+
+Cadangan ini mengambil arah daripada [Global Internal Audit Standards, The IIA](https://www.theiia.org/en/standards/2024-standards/global-internal-audit-standards/) berkenaan perancangan, dapatan, pelan tindakan dan pemantauan susulan. Ini spesifikasi produk yang dicadangkan, belum modul siap atau aturan audit rasmi SUK. Peranan juruaudit, kategori dapatan, kriteria audit dan kuasa penutupan perlu dipersetujui untuk real-case.
 
 Elakkan membina semua modul serentak. Bukti yang tersusun, kuasa kelulusan yang jelas dan laporan tepat memberi nilai lebih awal daripada menambah bilangan menu.
 
