@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\AuditEvent;
 use App\Models\Department;
 use App\Models\User;
+use App\Services\WorkspaceAlerts;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -46,6 +47,7 @@ class RegistrationController extends Controller
                 'after' => $user->only(['id', 'name', 'email', 'department_id', 'role', 'is_active', 'registration_pending']),
                 'created_at' => now(),
             ]);
+            app(WorkspaceAlerts::class)->registration($user);
         });
 
         return redirect()->route('login')->with('status', 'Permohonan akaun diterima. Akaun belum aktif sehingga pentadbir menyemak dan meluluskan permohonan anda. Hubungi pentadbir untuk semakan status.');

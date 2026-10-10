@@ -8,6 +8,7 @@ use App\Models\Document;
 use App\Models\Risk;
 use App\Models\RiskAction;
 use App\Models\User;
+use App\Services\WorkspaceAlerts;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -88,6 +89,9 @@ class AdminController extends Controller
             }
             $locked->update($data);
             AuditEvent::create(['actor_id' => $request->user()->id, 'action' => $approvingRegistration ? 'user.registration_approved' : 'user.updated', 'before' => $before, 'after' => $locked->only(['id', 'name', 'email', 'role', 'department_id', 'is_active', 'registration_pending']), 'created_at' => now()]);
+            if ($approvingRegistration) {
+                app(WorkspaceAlerts::class)->activation($request->user(), $locked);
+            }
         });
 
         return redirect()->route('admin.users')->with('status', 'Akaun dikemas kini.');

@@ -38,6 +38,7 @@ class RiskTreatment
             $this->validateAssignee($assignee, $risk);
             $action = $risk->actions()->create(['title' => $data['title'], 'description' => $data['description'], 'assignee_id' => $assignee->id, 'due_date' => $data['due_date'], 'cycle' => $risk->assessment_cycle, 'status' => 'open']);
             $this->record($user, $risk, 'created', ['action' => $action->toArray()]);
+            app(WorkspaceAlerts::class)->treatment($user, $action, 'created');
         });
     }
 
@@ -53,6 +54,7 @@ class RiskTreatment
             $before = $action->toArray();
             $action->update(['title' => $data['title'], 'description' => $data['description'], 'assignee_id' => $assignee->id, 'due_date' => $data['due_date']]);
             $this->record($user, $risk, 'updated', ['action' => $action->fresh()->toArray()], $before, $data['comment']);
+            app(WorkspaceAlerts::class)->treatment($user, $action->fresh(), 'updated');
         });
     }
 
@@ -69,6 +71,7 @@ class RiskTreatment
                 $before = $action->toArray();
                 $action->update(['status' => 'submitted', 'reviewer_id' => null, 'verified_at' => null]);
                 $this->record($user, $risk, 'submitted', ['action' => $action->fresh()->toArray(), 'evidence_id' => $evidence->id], $before, $data['summary']);
+                app(WorkspaceAlerts::class)->treatment($user, $action->fresh(), 'submitted');
             });
         } catch (\Throwable $error) {
             if ($path) {
@@ -91,6 +94,7 @@ class RiskTreatment
             $verified = $data['action'] === 'verify';
             $action->update(['status' => $verified ? 'verified' : 'returned', 'reviewer_id' => $verified ? $user->id : null, 'verified_at' => $verified ? now() : null]);
             $this->record($user, $risk, $data['action'], ['action' => $action->fresh()->toArray()], $before, $data['comment']);
+            app(WorkspaceAlerts::class)->treatment($user, $action->fresh(), $data['action']);
         });
     }
 

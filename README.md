@@ -14,6 +14,8 @@ Panduan pemasangan: [docs/laragon-setup.md](docs/laragon-setup.md). Spesifikasi 
 
 ## Mockup asal untuk rujukan
 
+Menu **Notifikasi** menyimpan pemberitahuan permohonan/pengaktifan akaun, semakan serta keputusan dokumen/risiko, penugasan rawatan dan pengesahan/pemulangan bukti. Pengguna boleh menapis belum dibaca, membuka rekod atau menandakan satu/semua notifikasi dibaca. Penerima ditentukan oleh akses dan kuasa semasa; akses rekod disemak semula apabila notifikasi dibuka. Notifikasi disimpan bersama transaksi urusan, tanpa kata laluan, tajuk rekod atau lampiran dalam mesej. Ciri ini merekodkan perubahan baharu selepas diaktifkan; rekod lama tidak menghasilkan notifikasi secara automatik. Jalankan `php artisan migrate` selepas kemas kini. E-mel dan peringatan tarikh automatik belum tersedia.
+
 Halaman `/login` dan `/register` berkongsi identiti korporat laman utama. Pegawai boleh memohon akaun dengan nama, e-mel, bahagian dan kata laluan. Akaun baharu berperanan pegawai dan tidak aktif sehingga pentadbir menyemak identiti serta bahagian di **Pengguna dalaman → Urus akaun**, memilih **Aktif** dan menyimpan. Permohonan menunggu kelulusan dipaparkan dahulu; pendaftaran dan kelulusan direkodkan dalam audit. Semakan e-mel dan pemberitahuan keputusan masih dibuat melalui saluran dalaman, tanpa e-mel automatik. Jalankan `php artisan migrate` selepas mendapatkan kemas kini ini.
 
 Landing page Laravel kini menggunakan reka bentuk korporat dengan jata Pahang, latar seni bina PPSAS, warna biru gelap dan emas serta paparan responsif. Pautan log masuk membawa pengguna ke ruang kerja mengikut peranan. Rekod sumber visual tersedia dalam [docs/landing-direction.md](docs/landing-direction.md).

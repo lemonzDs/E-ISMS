@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DocumentController;
+use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\RiskController;
 use App\Http\Controllers\RiskTreatmentController;
@@ -19,6 +20,10 @@ Route::middleware('guest')->group(function () {
 Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
 Route::middleware(['auth', 'active'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/notifications', [NotificationController::class, 'index'])->name('notifications.index');
+    Route::post('/notifications/read-all', [NotificationController::class, 'readAll'])->name('notifications.read-all');
+    Route::post('/notifications/{notification}/read', [NotificationController::class, 'read'])->name('notifications.read');
+    Route::post('/notifications/{notification}/open', [NotificationController::class, 'open'])->name('notifications.open');
     Route::get('/risks/{risk}/treatment', [RiskTreatmentController::class, 'show'])->name('risks.treatment');
     Route::post('/risks/{risk}/actions', [RiskTreatmentController::class, 'store'])->name('risk-actions.store');
     Route::put('/risk-actions/{action}', [RiskTreatmentController::class, 'update'])->name('risk-actions.update');

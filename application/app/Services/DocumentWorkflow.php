@@ -104,6 +104,7 @@ class DocumentWorkflow
             $locked->save();
             $locked->document->touch();
             $this->audit($actor, $locked, 'version.'.$action, $before, $comment);
+            app(WorkspaceAlerts::class)->document($actor, $locked, $action);
         });
     }
 

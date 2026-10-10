@@ -58,6 +58,9 @@ class RiskWorkflow
             $locked->lock_version++;
             $locked->save();
             $this->audit($actor, $locked, $action, $before, $comment);
+            if ($action !== 'reassess') {
+                app(WorkspaceAlerts::class)->risk($actor, $locked, $action);
+            }
         });
     }
 
