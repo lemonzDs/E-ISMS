@@ -8,6 +8,8 @@ Modul risiko (`/risks`) menyediakan penilaian contoh 5×5, carian/penapis, semak
 
 Preview tempatan: `http://127.0.0.1:8099/`. Jalankan `./scripts/Start-ISMS.ps1` dari PowerShell selepas MySQL Laragon dimulakan. Akaun demo dan kata laluan tempatan berada dalam `docs/local-demo-access.md` yang diabaikan Git. Jangan gunakan akaun demo untuk data sebenar.
 
+Selepas log masuk, pilih **Papan pemuka** (`/dashboard`) untuk dokumen dan risiko yang memerlukan tindakan mengikut peranan. Pantauan rawatan memaparkan tindakan dalam skop akses yang lewat, bersasaran hari ini hingga tujuh hari lagi, atau menunggu pengesahan. Hanya kitaran semasa bagi risiko disemak dan tindakan belum disahkan dikira, menggunakan tarikh Malaysia. Pentadbir melihat permohonan akaun dan jumlah pengguna aktif sahaja. Paparan dikemas kini apabila halaman dimuat semula; notifikasi automatik belum dilaksanakan.
+
 Panduan pemasangan: [docs/laragon-setup.md](docs/laragon-setup.md). Spesifikasi rintis: [docs/phase-1-design.md](docs/phase-1-design.md). Laravel document root mesti `application/public`; root projek dilindungi `.htaccess` apabila Apache digunakan. `.env`, fail dokumen dan pangkalan data tempatan tidak dimasukkan dalam Git.
 
 ## Mockup asal untuk rujukan

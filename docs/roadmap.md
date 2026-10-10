@@ -1,6 +1,6 @@
 # Fasa pembangunan e-ISMS SUK Pahang
 
-Tarikh: 3 Oktober 2026
+Tarikh kemas kini: 10 Oktober 2026
 Status: cadangan susunan pembangunan selepas review mockup; bukan komitmen jadual atau skop yang telah disahkan organisasi.
 
 ## Kedudukan semasa
@@ -12,7 +12,7 @@ Keutamaan seterusnya ialah menjadikan proses teras berfungsi dan boleh dipercaya
 **Hasil:** pengguna dalaman boleh masuk dan melihat rekod dalam skop yang dibenarkan.
 
 - Setup Laravel stabil terkini yang serasi, Blade/Vite dan MySQL tempatan.
-- Akaun dalaman, bahagian, peranan dan skop ISMS; tanpa pendaftaran awam.
+- Akaun dalaman, bahagian, peranan dan skop ISMS. Pendaftaran kendiri pegawai tersedia; akses hanya selepas semakan dan pengaktifan pentadbir.
 - Matriks akses yang disahkan pemilik proses; pentadbir teknikal tidak menerima kuasa kelulusan secara automatik.
 - Polisi akses bagi rekod, butiran, fail dan eksport; transaksi dan jejak audit.
 - Data contoh seeder untuk pembangunan, diasingkan daripada data rintis sebenar.
@@ -65,7 +65,9 @@ Keutamaan seterusnya ialah menjadikan proses teras berfungsi dan boleh dipercaya
 | 5 | Integrasi organisasi | SSO/direktori pengguna, aset dan e-mel; selepas sistem sumber serta pemilik integrasi dikenal pasti |
 
 ## Cadangan pilihan pertama
-Mulakan Fasa 1 dan satu aliran dokumen dalam Fasa 2, kemudian hubungkan risiko/tindakan. Untuk modul baharu selepas MVP, utamakan **audit dalaman dan tindakan pembetulan** kerana ia menggunakan semula dokumen, bukti, pemilik dan tindakan yang sudah dibina.
+Asas akses, aliran dokumen, risiko/rawatan, halaman log masuk korporat dan pendaftaran pegawai telah tersedia. Papan pemuka `/dashboard` kini menyenaraikan tugasan dokumen/risiko mengikut peranan, tindakan semasa yang lewat atau hampir tarikh sasaran serta permohonan akaun untuk pentadbir. Kiraan menggunakan rekod dalam skop akses dan tarikh Malaysia; tiada penghantaran peringatan automatik.
+
+Baki seterusnya: notifikasi dalam aplikasi dan e-mel selepas tetapan disahkan; keputusan penerimaan risiko dan SoA selepas aturan organisasi dipersetujui; laporan/eksport, import rekod manual, UAT, sandaran serta ujian pemulihan. Untuk modul baharu selepas MVP, utamakan **audit dalaman dan tindakan pembetulan** kerana ia menggunakan semula dokumen, bukti, pemilik dan tindakan yang sudah dibina.
 
 Elakkan membina semua modul serentak. Bukti yang tersusun, kuasa kelulusan yang jelas dan laporan tepat memberi nilai lebih awal daripada menambah bilangan menu.
 

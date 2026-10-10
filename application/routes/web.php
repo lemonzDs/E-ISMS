@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\RiskController;
@@ -17,6 +18,7 @@ Route::middleware('guest')->group(function () {
 });
 Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
 Route::middleware(['auth', 'active'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/risks/{risk}/treatment', [RiskTreatmentController::class, 'show'])->name('risks.treatment');
     Route::post('/risks/{risk}/actions', [RiskTreatmentController::class, 'store'])->name('risk-actions.store');
     Route::put('/risk-actions/{action}', [RiskTreatmentController::class, 'update'])->name('risk-actions.update');
