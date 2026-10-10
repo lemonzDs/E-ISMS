@@ -1,5 +1,14 @@
-@extends('layouts.app')
-@section('title','Log masuk')
+@extends('layouts.auth')
+@section('title', 'Log masuk pegawai')
 @section('content')
-<div class="auth-wrap"><a href="{{ route('home') }}">← Portal e-ISMS</a><h1>Log masuk ke ruang kerja</h1><p class="muted">Akaun dalaman SUK Pahang · Rintis tempatan</p>@include('components.feedback')<div class="work-panel"><form method="post" action="{{ route('login') }}">@csrf<div class="work-field"><label for="email">E-mel</label><input id="email" name="email" type="email" value="{{ old('email') }}" required autocomplete="username" autofocus @error('email') aria-invalid="true" @enderror></div><div class="work-field"><label for="password">Kata laluan</label><input id="password" name="password" type="password" required autocomplete="current-password"></div><button class="work-button">Log masuk</button></form></div><p class="muted">Hubungi pentadbir jika akaun belum tersedia atau perlu menetapkan semula kata laluan.</p></div>
+<h1 id="auth-title">Log masuk pegawai</h1>
+<p class="auth-description">Gunakan akaun dalaman anda untuk mengakses ruang kerja e-ISMS.</p>
+@include('components.feedback')
+<form method="post" action="{{ route('login') }}" class="officer-fields">
+    @csrf
+    <div class="work-field"><label for="email">E-mel</label><input id="email" name="email" type="email" value="{{ old('email') }}" required autocomplete="username" maxlength="255" @error('email') aria-invalid="true" @enderror></div>
+    <div class="work-field"><label for="password">Kata laluan</label><input id="password" name="password" type="password" required autocomplete="current-password"></div>
+    <button class="cp-button cp-button-gold auth-submit" type="submit">Log masuk</button>
+</form>
+<p class="auth-help">Belum mempunyai akaun? <a href="{{ route('register') }}">Daftar sebagai pegawai</a>.<br>Untuk menetapkan semula kata laluan, hubungi pentadbir sistem.</p>
 @endsection

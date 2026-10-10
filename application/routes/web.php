@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DocumentController;
+use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\RiskController;
 use App\Http\Controllers\RiskTreatmentController;
 use Illuminate\Support\Facades\Route;
@@ -11,6 +12,8 @@ Route::view('/', 'landing')->name('home');
 Route::middleware('guest')->group(function () {
     Route::view('/login', 'auth.login')->name('login');
     Route::post('/login', [AuthController::class, 'login']);
+    Route::get('/register', [RegistrationController::class, 'create'])->name('register');
+    Route::post('/register', [RegistrationController::class, 'store'])->middleware('throttle:5,1')->name('register.store');
 });
 Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
 Route::middleware(['auth', 'active'])->group(function () {

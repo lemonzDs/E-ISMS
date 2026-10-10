@@ -19,7 +19,7 @@ class AdminController extends Controller
 {
     public function index(): View
     {
-        return view('admin.users', ['users' => User::with('department')->orderBy('name')->paginate(20), 'departments' => Department::orderBy('name')->get()]);
+        return view('admin.users', ['users' => User::with('department')->orderByDesc('registration_pending')->orderBy('name')->paginate(20), 'departments' => Department::orderBy('name')->get()]);
     }
 
     public function departments(): View
@@ -81,9 +81,13 @@ class AdminController extends Controller
             if ($locked->role === 'admin' && $locked->is_active && ($data['role'] !== 'admin' || ! $data['is_active']) && User::where('role', 'admin')->where('is_active', true)->count() <= 1) {
                 throw ValidationException::withMessages(['role' => 'Sekurang-kurangnya satu pentadbir aktif diperlukan.']);
             }
-            $before = $locked->only(['id', 'name', 'email', 'role', 'department_id', 'is_active']);
+            $before = $locked->only(['id', 'name', 'email', 'role', 'department_id', 'is_active', 'registration_pending']);
+            $approvingRegistration = $locked->registration_pending && $data['is_active'];
+            if ($approvingRegistration) {
+                $data['registration_pending'] = false;
+            }
             $locked->update($data);
-            AuditEvent::create(['actor_id' => $request->user()->id, 'action' => 'user.updated', 'before' => $before, 'after' => $locked->only(['id', 'name', 'email', 'role', 'department_id', 'is_active']), 'created_at' => now()]);
+            AuditEvent::create(['actor_id' => $request->user()->id, 'action' => $approvingRegistration ? 'user.registration_approved' : 'user.updated', 'before' => $before, 'after' => $locked->only(['id', 'name', 'email', 'role', 'department_id', 'is_active', 'registration_pending']), 'created_at' => now()]);
         });
 
         return redirect()->route('admin.users')->with('status', 'Akaun dikemas kini.');

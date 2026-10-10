@@ -46,7 +46,7 @@ class DocumentWorkflowTest extends TestCase
         $this->assertAuthenticatedAs($user);
         $this->post('/logout')->assertRedirect('/');
         $this->assertGuest();
-        $this->get('/register')->assertNotFound();
+        $this->get('/register')->assertOk();
     }
 
     public function test_login_is_throttled(): void

@@ -12,6 +12,8 @@ Panduan pemasangan: [docs/laragon-setup.md](docs/laragon-setup.md). Spesifikasi 
 
 ## Mockup asal untuk rujukan
 
+Halaman `/login` dan `/register` berkongsi identiti korporat laman utama. Pegawai boleh memohon akaun dengan nama, e-mel, bahagian dan kata laluan. Akaun baharu berperanan pegawai dan tidak aktif sehingga pentadbir menyemak identiti serta bahagian di **Pengguna dalaman → Urus akaun**, memilih **Aktif** dan menyimpan. Permohonan menunggu kelulusan dipaparkan dahulu; pendaftaran dan kelulusan direkodkan dalam audit. Semakan e-mel dan pemberitahuan keputusan masih dibuat melalui saluran dalaman, tanpa e-mel automatik. Jalankan `php artisan migrate` selepas mendapatkan kemas kini ini.
+
 Landing page Laravel kini menggunakan reka bentuk korporat dengan jata Pahang, latar seni bina PPSAS, warna biru gelap dan emas serta paparan responsif. Pautan log masuk membawa pengguna ke ruang kerja mengikut peranan. Rekod sumber visual tersedia dalam [docs/landing-direction.md](docs/landing-direction.md).
 
 Fasa semasa: mockup v0.2 untuk Penyelaras ISMS, dengan arah formal, ringkas dan berorientasikan kerja. Portal memaparkan daftar perhatian dan direktori modul; ruang kerja menggunakan navigasi cerah dan ringkasan berformat daftar. Semua data adalah rekaan. Tiada login, database, upload atau kelulusan sebenar; perubahan hanya kekal sehingga halaman dimuat semula.
