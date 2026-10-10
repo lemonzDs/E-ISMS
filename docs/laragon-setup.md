@@ -12,6 +12,10 @@ Mulakan MySQL melalui Laragon selepas komputer dihidupkan semula. Dari folder IS
 
 Buka http://127.0.0.1:8099/. Ctrl+C menghentikan pelayan. Skrip menggunakan PHP Laragon dengan had muat naik 10 MB dan post 12 MB; tiada perubahan kepada php.ini global. MySQL perlu berjalan sebelum log masuk.
 
+Selepas kemas kini, jalankan `php artisan migrate` dari `application/` dahulu. Pelancar turut menjalankan `isms:remind-treatments` semasa mula dan menghidupkan `schedule:work` secara tersembunyi. Peringatan harian dijadualkan 08:00 waktu Malaysia selama komputer dan MySQL berjalan. Ctrl+C menghentikan kedua-dua proses. Log penjadual berada dalam `application/storage/logs/scheduler-output.log` dan `scheduler-error.log` (diabaikan Git). Pilihan `./scripts/Start-ISMS.ps1 -NoScheduler` menghidupkan pelayan sahaja.
+
+Jika menggunakan Apache/vhost Laragon, jalankan `php artisan schedule:work` dari `application/` dalam terminal berasingan sepanjang ujian tempatan. Untuk semakan sekali sahaja: `php artisan isms:remind-treatments`. Arahan selamat diulang: setiap gabungan tindakan, pelaksana dan tarikh mendapat maksimum satu peringatan hampir sasaran dan satu peringatan lewat. E-mel serta eskalasi organisasi belum diaktifkan.
+
 Untuk Apache/vhost Laragon, tetapkan **document root `C:/laragon/www/ISMS/application/public`** dan `APP_URL` kepada URL vhost, kemudian `php artisan config:clear`. Root projek `.htaccess` menolak akses; folder public memberi akses secara eksplisit. Jangan buang perlindungan root untuk menyelesaikan 403. Konfigurasi vhost belum diubah atau diuji dalam fasa ini.
 
 ## Akaun demo tempatan
@@ -42,6 +46,6 @@ Browser: `node scripts/check-laravel.cjs` dari root. Playwright perlu tersedia; 
 
 ## Batasan sebelum real-case
 
-Perlu sahkan kuasa pelulus, klasifikasi/retensi, borang sebenar, matriks risiko, pemindahan pemilik dan konfigurasi operasi. Pemilik dokumen pending atau risiko tidak boleh ditukar kepada bahagian/peranan yang menghalang kerja; deactivation dibenarkan. Pelaksana tindakan terbuka perlu ditukar dalam pelan rawatan sebelum perubahan bahagian/peranan. Pemilik risiko boleh menilai risiko baki selepas semua tindakan disahkan penyelaras yang bukan pemilik atau pelaksana. Pemindahan pemilik risiko, SoA, penerimaan risiko rasmi, pendaftaran awam, reset password kendiri, e-mel keluar, pemeriksaan malware dan import rekod belum tersedia. Pentadbir boleh menetapkan semula kata laluan melalui pengurusan akaun.
+Perlu sahkan kuasa pelulus, klasifikasi/retensi, borang sebenar, matriks risiko, pemindahan pemilik dan konfigurasi operasi. Pemilik dokumen pending atau risiko tidak boleh ditukar kepada bahagian/peranan yang menghalang kerja; deactivation dibenarkan. Pelaksana tindakan terbuka perlu ditukar dalam pelan rawatan sebelum perubahan bahagian/peranan. Pemilik risiko boleh menilai risiko baki selepas semua tindakan disahkan penyelaras yang bukan pemilik atau pelaksana. Pemindahan pemilik risiko, SoA, penerimaan risiko rasmi, reset password kendiri, e-mel keluar, pemeriksaan malware dan import rekod belum tersedia. Pendaftaran pegawai melalui kelulusan pentadbir tersedia. Pentadbir boleh menetapkan semula kata laluan melalui pengurusan akaun.
 
 Versi diluluskan tidak boleh diedit melalui aplikasi. Ini bukan storan WORM atau perlindungan terhadap pentadbir database. Audit transaksi tidak bermaksud pensijilan ISO. Sandaran/pemulihan dan UAT operasi ialah fasa berikutnya.

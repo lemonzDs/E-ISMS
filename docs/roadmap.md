@@ -67,9 +67,9 @@ Keutamaan seterusnya ialah menjadikan proses teras berfungsi dan boleh dipercaya
 ## Cadangan pilihan pertama
 Asas akses, aliran dokumen, risiko/rawatan, halaman log masuk korporat dan pendaftaran pegawai telah tersedia. Papan pemuka `/dashboard` kini menyenaraikan tugasan dokumen/risiko mengikut peranan, tindakan semasa yang lewat atau hampir tarikh sasaran serta permohonan akaun untuk pentadbir. Kiraan menggunakan rekod dalam skop akses dan tarikh Malaysia; tiada penghantaran peringatan automatik.
 
-Notifikasi dalam aplikasi kini tersedia bagi pendaftaran/pengaktifan akaun, dokumen, risiko dan rawatan. Menu notifikasi menyokong penapis belum dibaca, penandaan dibaca dan pembukaan rekod dengan semakan akses semasa. Notifikasi bermula dengan perubahan urusan baharu; e-mel dan peringatan tarikh berjadual belum diaktifkan.
+Notifikasi dalam aplikasi kini tersedia bagi pendaftaran/pengaktifan akaun, dokumen, risiko dan rawatan. Menu notifikasi menyokong penapis belum dibaca, penandaan dibaca dan pembukaan rekod dengan semakan akses semasa. Peringatan rawatan hampir/lewat sasaran dijalankan semasa pelancar bermula dan dijadualkan 08:00 waktu Malaysia, dengan rekod pencegahan pendua. Pelancar dan MySQL mesti berjalan; e-mel belum diaktifkan.
 
-Baki seterusnya: peringatan tarikh dan e-mel selepas tetapan disahkan; keputusan penerimaan risiko dan SoA selepas aturan organisasi dipersetujui; laporan/eksport, import rekod manual, UAT, sandaran serta ujian pemulihan. Untuk modul baharu selepas MVP, utamakan **audit dalaman dan tindakan pembetulan** kerana ia menggunakan semula dokumen, bukti, pemilik dan tindakan yang sudah dibina.
+Baki seterusnya: e-mel dan eskalasi selepas tetapan serta penerima disahkan; keputusan penerimaan risiko dan SoA selepas aturan organisasi dipersetujui; laporan/eksport, import rekod manual, UAT, sandaran serta ujian pemulihan. Untuk modul baharu selepas MVP, utamakan **audit dalaman dan tindakan pembetulan** kerana ia menggunakan semula dokumen, bukti, pemilik dan tindakan yang sudah dibina.
 
 Elakkan membina semua modul serentak. Bukti yang tersusun, kuasa kelulusan yang jelas dan laporan tepat memberi nilai lebih awal daripada menambah bilangan menu.
 
