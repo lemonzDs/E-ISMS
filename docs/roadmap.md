@@ -73,7 +73,7 @@ Laporan dan eksport CSV kini tersedia di `/reports`: status versi dokumen terkin
 
 Baki seterusnya: e-mel dan eskalasi selepas tetapan serta penerima disahkan; keputusan penerimaan risiko dan SoA selepas aturan organisasi dipersetujui; import rekod manual, UAT, sandaran serta ujian pemulihan. Untuk modul baharu selepas MVP, utamakan **audit dalaman dan tindakan pembetulan** kerana ia menggunakan semula dokumen, bukti, pemilik dan tindakan yang sudah dibina.
 
-### Cadangan modul audit dalaman
+### Modul audit dalaman — rintis siap
 
 Aliran dicadangkan: pelan audit → persediaan/skop → pelaksanaan dan bukti → dapatan → tindakan pembetulan → semakan keberkesanan → penutupan atau pembukaan semula.
 
@@ -84,7 +84,11 @@ Aliran dicadangkan: pelan audit → persediaan/skop → pelaksanaan dan bukti �
 - Susulan: juruaudit bebas menyemak keberkesanan; bukti dihantar tidak menutup dapatan secara automatik.
 - Laporan audit: ringkasan dapatan, respons pengurusan, kelulusan laporan dan sejarah perubahan.
 
-Cadangan ini mengambil arah daripada [Global Internal Audit Standards, The IIA](https://www.theiia.org/en/standards/2024-standards/global-internal-audit-standards/) berkenaan perancangan, dapatan, pelan tindakan dan pemantauan susulan. Ini spesifikasi produk yang dicadangkan, belum modul siap atau aturan audit rasmi SUK. Peranan juruaudit, kategori dapatan, kriteria audit dan kuasa penutupan perlu dipersetujui untuk real-case.
+Aliran teras kini dilaksanakan di `/audits`: pelan, pasukan bebas dari luar bahagian, senarai semak, bukti, dapatan bertarikh sasaran, respons pegawai, semakan keberkesanan, pemulangan, penutupan/pembukaan semula, laporan cetakan dan sejarah. Notifikasi serta pantauan dapatan di papan pemuka turut tersedia. Ketua audit menutup audit selepas semua syarat dipenuhi; kelulusan laporan formal berasingan dan peringatan automatik dapatan audit belum dilaksanakan.
+
+Cadangan ini mengambil arah daripada [Global Internal Audit Standards, The IIA](https://www.theiia.org/en/standards/2024-standards/global-internal-audit-standards/) berkenaan perancangan, dapatan, pelan tindakan dan pemantauan susulan. Aturan rintis belum menjadi aturan audit rasmi SUK. Peranan juruaudit, kategori dapatan, kriteria audit dan kuasa penutupan perlu dipersetujui untuk real-case.
+
+Fasa berikutnya ialah UAT bersama penyelaras, juruaudit dan pegawai satu bahagian, menggunakan rekod contoh. Sahkan kuasa sebenar, borang, kriteria audit dan matriks risiko; uji sandaran/pemulihan sebelum memindahkan rekod manual. Selepas itu, bina SoA/penerimaan risiko dan kajian semula pengurusan mengikut aturan yang diluluskan.
 
 Elakkan membina semua modul serentak. Bukti yang tersusun, kuasa kelulusan yang jelas dan laporan tepat memberi nilai lebih awal daripada menambah bilangan menu.
 

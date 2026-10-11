@@ -2,6 +2,7 @@
 @import '../../../mockup/styles.css';
 @import './portal.css';
 @import './auth-portal.css';
+@import './audits.css';
 
 .notification-count{display:inline-block;min-width:24px;padding:1px 6px;margin-left:4px;background:#dde5ea;color:#163a50;border-radius:3px;font-size:12px;text-align:center}.notification-filters{margin-bottom:20px}.notification-filters [aria-current=page]{background:var(--navy);color:#fff}.notification-list{list-style:none;padding:0;margin:0}.notification-list>li{display:flex;justify-content:space-between;gap:24px;padding:22px 0;border-bottom:1px solid var(--line)}.notification-list>li:first-child{padding-top:0}.notification-list>li:last-child{border-bottom:0;padding-bottom:0}.notification-list p{margin:12px 0 8px;overflow-wrap:anywhere}.notification-list time{font-size:12px;color:var(--muted)}.notification-list .work-actions{flex-shrink:0;align-self:center}.notification-list form{margin:0}@media(max-width:900px){.notification-list>li{flex-direction:column;gap:14px}.notification-list .work-actions{align-self:flex-start;flex-shrink:1}}
 .skip-link{position:absolute;left:-10000px;top:0;padding:12px 18px;background:white;z-index:1000}.skip-link:focus{left:12px;top:12px}

@@ -8,6 +8,20 @@ Modul risiko (`/risks`) menyediakan penilaian contoh 5×5, carian/penapis, semak
 
 Preview tempatan: `http://127.0.0.1:8099/`. Jalankan `./scripts/Start-ISMS.ps1` dari PowerShell selepas MySQL Laragon dimulakan. Akaun demo dan kata laluan tempatan berada dalam `docs/local-demo-access.md` yang diabaikan Git. Jangan gunakan akaun demo untuk data sebenar.
 
+## Audit dalaman dan tindakan pembetulan
+
+Menu **Audit dalaman** (`/audits`) melengkapkan aliran pelan draf → dijadualkan → pemeriksaan → penutupan atau pembukaan semula. Pelan mengandungi bahagian, skop, kriteria, tempoh dan pasukan. Penyedia pelan ialah penyelaras; juruaudit ditugaskan daripada penyelaras aktif di luar bahagian yang diaudit. Ketua memulakan dan menutup audit; ahli boleh menjalankan pemeriksaan dan menyemak dapatan. Penyedia boleh menggantikan pasukan dengan alasan, termasuk apabila ketua tidak aktif.
+
+Senarai semak merekodkan rujukan, keputusan dan catatan pemeriksaan. Juruaudit merekodkan dapatan ketakakuran/pemerhatian/penambahbaikan serta keutamaan, pegawai dan tarikh sasaran. Hanya pegawai yang ditugaskan boleh menghantar punca akar, pembetulan segera, tindakan pembetulan, ukuran keberkesanan dan bukti PDF (maksimum 10 MB). Juruaudit bebas mesti merekodkan hasil semakan sebelum menutup dapatan; penghantaran bukti tidak menutup dapatan secara automatik. Pemulangan dan pembukaan semula mengekalkan bukti serta respons terdahulu dalam sejarah.
+
+Audit hanya boleh ditutup apabila semua pemeriksaan selesai, keputusan mematuhi/tidak mematuhi mempunyai bukti pemeriksaan, setiap keputusan tidak mematuhi mempunyai dapatan ketakakuran dan semua dapatan ditutup. Keputusan tidak berkenaan memerlukan justifikasi. Audit tertutup perlu dibuka semula sebelum dapatan diubah. Perubahan serentak ditolak dengan arahan muat semula.
+
+Pegawai melihat audit bahagian sendiri; penyelaras/pelulus boleh melihat merentas bahagian, tetapi hanya pasukan yang ditugaskan boleh menjalankan audit. Pentadbir teknikal tidak mendapat akses urusan audit. Bukti disimpan secara persendirian dan muat turun menyemak akses semasa. Notifikasi penugasan/status/semakan, senarai tindakan pada papan pemuka dan **Laporan audit → Cetak / simpan PDF** tersedia. Laporan menggunakan rekod semasa; sejarah menyimpan keadaan sebelum/selepas, pasukan dan metadata bukti. Peringatan tarikh automatik masih melibatkan rawatan risiko sahaja.
+
+Selepas kemas kini, jalankan `php artisan migrate` dan `npm run build` dalam `application/`. Untuk contoh audit tambahan, jalankan `php artisan db:seed --class=InternalAuditDemoSeeder` selepas `DemoSeeder`; contoh ini tidak memadam rekod sedia ada. Gunakan penyelaras demo sebagai juruaudit dan pegawai kewangan demo sebagai pelaksana. Bukti review berada dalam `docs/review/audits/`.
+
+Aturan ini ialah rintis: pasukan menggunakan peranan penyelaras sedia ada, penutupan oleh ketua audit dan semakan dapatan oleh juruaudit bebas. Kuasa audit sebenar, klasifikasi/retensi, kriteria dan proses kelulusan laporan organisasi masih perlu disahkan melalui UAT sebelum data operasi digunakan.
+
 Selepas log masuk, pilih **Papan pemuka** (`/dashboard`) untuk dokumen dan risiko yang memerlukan tindakan mengikut peranan. Pantauan rawatan memaparkan tindakan dalam skop akses yang lewat, bersasaran hari ini hingga tujuh hari lagi, atau menunggu pengesahan. Hanya kitaran semasa bagi risiko disemak dan tindakan belum disahkan dikira, menggunakan tarikh Malaysia. Pentadbir melihat permohonan akaun dan jumlah pengguna aktif sahaja. Paparan dikemas kini apabila halaman dimuat semula; pemberitahuan urusan dan peringatan rawatan tersedia melalui menu Notifikasi.
 
 Panduan pemasangan: [docs/laragon-setup.md](docs/laragon-setup.md). Spesifikasi rintis: [docs/phase-1-design.md](docs/phase-1-design.md). Laravel document root mesti `application/public`; root projek dilindungi `.htaccess` apabila Apache digunakan. `.env`, fail dokumen dan pangkalan data tempatan tidak dimasukkan dalam Git.

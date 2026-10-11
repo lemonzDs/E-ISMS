@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\AuditEvent;
+use App\Models\AuditFinding;
 use App\Models\Department;
 use App\Models\Document;
+use App\Models\InternalAudit;
 use App\Models\Risk;
 use App\Models\RiskAction;
 use App\Models\User;
@@ -64,6 +66,11 @@ class AdminController extends Controller
         DB::transaction(function () use ($request, $user, $data) {
             User::where('role', 'admin')->where('is_active', true)->lockForUpdate()->get();
             $locked = User::lockForUpdate()->findOrFail($user->id);
+            $openAudit = InternalAudit::where('status', '!=', 'closed')->whereHas('auditors', fn ($query) => $query->where('users.id', $locked->id))->exists();
+            $auditOwner = AuditFinding::where('owner_id', $locked->id)->where('status', '!=', 'closed')->exists();
+            if (($openAudit && ((int) $data['department_id'] !== $locked->department_id || $data['role'] !== 'coordinator')) || ($auditOwner && ((int) $data['department_id'] !== $locked->department_id || ! in_array($data['role'], ['officer', 'coordinator'], true))) || (InternalAudit::where('created_by', $locked->id)->exists() && $data['role'] !== 'coordinator')) {
+                throw ValidationException::withMessages(['role' => 'Pengguna mempunyai tanggungjawab audit. Pindahkan penugasan audit dahulu sebelum menukar bahagian atau peranan.']);
+            }
             if (RiskAction::where('assignee_id', $locked->id)->where('status', '!=', 'verified')->exists() && ((int) $data['department_id'] !== $locked->department_id || ! in_array($data['role'], ['officer', 'coordinator'], true))) {
                 throw ValidationException::withMessages(['role' => 'Pengguna mempunyai tindakan rawatan belum selesai. Tukar pelaksana tindakan dahulu sebelum menukar bahagian atau peranan.']);
             }

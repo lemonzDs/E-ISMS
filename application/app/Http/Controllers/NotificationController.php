@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Document;
+use App\Models\InternalAudit;
 use App\Models\Risk;
 use App\Models\User;
 use Illuminate\Contracts\View\View;
@@ -43,6 +44,10 @@ class NotificationController extends Controller
         $data = $alert->data;
         $target = (int) $data['target_id'];
         switch ($data['kind']) {
+            case 'audit':
+                Gate::authorize('view', InternalAudit::findOrFail($target));
+                $url = route('audits.show', $target);
+                break;
             case 'document':
                 Gate::authorize('view', Document::findOrFail($target));
                 $url = route('documents.show', $target);

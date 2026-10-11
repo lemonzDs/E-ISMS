@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DocumentController;
+use App\Http\Controllers\InternalAuditController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\ReportController;
@@ -20,6 +21,18 @@ Route::middleware('guest')->group(function () {
 });
 Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
 Route::middleware(['auth', 'active'])->group(function () {
+    Route::resource('audits', InternalAuditController::class)->except('destroy');
+    Route::get('/audits/{audit}/report', [InternalAuditController::class, 'report'])->name('audits.report');
+    Route::post('/audits/{audit}/transition', [InternalAuditController::class, 'transition'])->name('audits.transition');
+    Route::post('/audits/{audit}/team', [InternalAuditController::class, 'team'])->name('audits.team');
+    Route::post('/audits/{audit}/checklist', [InternalAuditController::class, 'checklist'])->name('audits.checklist');
+    Route::post('/audit-checklist/{item}/check', [InternalAuditController::class, 'check'])->name('audits.check');
+    Route::post('/audits/{audit}/findings', [InternalAuditController::class, 'finding'])->name('audits.finding');
+    Route::post('/audits/{audit}/evidence', [InternalAuditController::class, 'inspection'])->name('audits.inspection');
+    Route::post('/audit-findings/{finding}/assign', [InternalAuditController::class, 'assign'])->name('audit-findings.assign');
+    Route::post('/audit-findings/{finding}/submit', [InternalAuditController::class, 'submit'])->name('audit-findings.submit');
+    Route::post('/audit-findings/{finding}/decision', [InternalAuditController::class, 'decide'])->name('audit-findings.decide');
+    Route::get('/audit-evidence/{evidence}', [InternalAuditController::class, 'download'])->name('audit-evidence.download');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/reports', [ReportController::class, 'index'])->name('reports.index');
     Route::get('/reports/{dataset}/export', [ReportController::class, 'export'])->name('reports.export');

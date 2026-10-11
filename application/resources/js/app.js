@@ -1,3 +1,5 @@
+document.getElementById('print-audit')?.addEventListener('click', () => window.print());
+
 document.addEventListener('submit', event => {
     const button = event.submitter;
     if (!button) return;
