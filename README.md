@@ -22,6 +22,18 @@ Selepas kemas kini, jalankan `php artisan migrate` dan `npm run build` dalam `ap
 
 Aturan ini ialah rintis: pasukan menggunakan peranan penyelaras sedia ada, penutupan oleh ketua audit dan semakan dapatan oleh juruaudit bebas. Kuasa audit sebenar, klasifikasi/retensi, kriteria dan proses kelulusan laporan organisasi masih perlu disahkan melalui UAT sebelum data operasi digunakan.
 
+## Ujian penerimaan sistem (UAT)
+
+Menu **Ujian penerimaan (UAT)** (`/uat`) menyediakan sesi bagi satu bahagian dan versi/rujukan binaan tertentu. Penyelaras menyediakan skop dan memilih penguji aktif dalam bahagian tersebut. Sepuluh senario rintis meliputi akaun/akses, dokumen, risiko, audit, notifikasi, laporan, integriti rekod, telefon dan sandaran/pemulihan. Senario organisasi boleh ditambah semasa draf; definisi dibekukan apabila ujian bermula. Jika skop atau versi perlu diganti, batalkan sesi aktif dengan alasan dan sediakan sesi baharu.
+
+Penguji yang ditugaskan merekodkan **Lulus**, **Gagal** atau **Terhalang**, hasil sebenar dan bukti PDF pilihan (maksimum 10 MB, storan private). Keputusan gagal/terhalang memerlukan penyelaras merekodkan pembetulan atau penyelesaian halangan sebelum ujian semula. Catatan pembetulan tidak menukar keputusan; ujian semula menambah rekod baharu dan mengekalkan semua percubaan terdahulu. Penguji boleh diganti dengan alasan tanpa memadam sejarah.
+
+Hanya selepas semua senario terkini lulus, penyelaras boleh menghantar sesi untuk pengesahan. Pelulus yang bukan penyedia, penguji atau peserta ujian/pembetulan boleh mengesahkan atau mengembalikan sesi. Sesi disahkan/dibatalkan tidak boleh menerima keputusan baharu; pengesahan ini tidak mengaktifkan operasi secara automatik. Semua perubahan mempunyai sejarah, notifikasi dan kawalan perubahan serentak. Papan pemuka memaparkan sesi aktif untuk tindakan; laporan boleh dicetak/disimpan PDF. Pegawai melihat bahagian sendiri, penyelaras/pelulus merentas bahagian dan pentadbir teknikal tidak mendapat akses urusan UAT.
+
+Jalankan `php artisan migrate` selepas kemas kini. Untuk sesi contoh yang **belum diuji**, jalankan `php artisan db:seed --class=AcceptanceDemoSeeder` selepas `DemoSeeder`. Log masuk penyelaras demo untuk memulakan sesi; pegawai ICT demo merekodkan ujian dan pelulus demo menyemak penerimaan. Keputusan mesti berdasarkan ujian manual sebenar, bukan keputusan ujian automatik pembangun. Senario pemulihan kekal Terhalang jika kemudahan sandaran/persekitaran pemulihan belum disediakan. Modul ini merekodkan UAT; ia tidak menjalankan sandaran atau pemulihan.
+
+`docs/review/uat/` mengandungi bukti semakan UI sintetik. Sesi **E2E · Simulasi borang UAT** berlabel simulasi menguji borang serta aliran keputusan sahaja; ia bukan penerimaan operasi oleh pegawai SUK. Sesi **UAT rintis ICT (contoh)** kekal draf dengan semua senario belum diuji.
+
 Selepas log masuk, pilih **Papan pemuka** (`/dashboard`) untuk dokumen dan risiko yang memerlukan tindakan mengikut peranan. Pantauan rawatan memaparkan tindakan dalam skop akses yang lewat, bersasaran hari ini hingga tujuh hari lagi, atau menunggu pengesahan. Hanya kitaran semasa bagi risiko disemak dan tindakan belum disahkan dikira, menggunakan tarikh Malaysia. Pentadbir melihat permohonan akaun dan jumlah pengguna aktif sahaja. Paparan dikemas kini apabila halaman dimuat semula; pemberitahuan urusan dan peringatan rawatan tersedia melalui menu Notifikasi.
 
 Panduan pemasangan: [docs/laragon-setup.md](docs/laragon-setup.md). Spesifikasi rintis: [docs/phase-1-design.md](docs/phase-1-design.md). Laravel document root mesti `application/public`; root projek dilindungi `.htaccess` apabila Apache digunakan. `.env`, fail dokumen dan pangkalan data tempatan tidak dimasukkan dalam Git.

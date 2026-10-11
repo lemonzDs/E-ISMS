@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AcceptanceSession;
 use App\Models\AuditFinding;
 use App\Models\Document;
 use App\Models\Risk;
@@ -53,6 +54,12 @@ class DashboardController extends Controller
         $attention = (clone $actions)->where(fn ($query) => $query->whereDate('due_date', '<=', $today->copy()->addDays(7)->toDateString())->orWhere('status', 'submitted'));
 
         return view('dashboard', [
+            'uatSessions' => AcceptanceSession::visibleTo($user)->whereIn('status', ['draft', 'testing', 'review'])->where(function ($query) use ($user) {
+                $query->where('created_by', $user->id)->orWhere('tester_id', $user->id);
+                if ($user->role === 'approver') {
+                    $query->orWhere('status', 'review');
+                }
+            })->with('department', 'tester')->oldest('id')->limit(8)->get(),
             'auditFindings' => AuditFinding::whereHas('audit', fn ($query) => $query->visibleTo($user)->where('status', 'ongoing'))->where('status', '!=', 'closed')->with('audit.department', 'owner')->orderBy('due_date')->orderBy('id')->paginate(8, ['*'], 'audit_page')->withQueryString(),
             'documents' => $documents, 'risks' => $risks, 'overdue' => $overdue, 'soon' => $soon,
             'actions' => $attention->with(['risk.department', 'assignee'])->orderBy('due_date')->orderBy('id')->paginate(10, ['*'], 'actions_page')->withQueryString(),

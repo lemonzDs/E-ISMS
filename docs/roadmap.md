@@ -90,6 +90,12 @@ Cadangan ini mengambil arah daripada [Global Internal Audit Standards, The IIA](
 
 Fasa berikutnya ialah UAT bersama penyelaras, juruaudit dan pegawai satu bahagian, menggunakan rekod contoh. Sahkan kuasa sebenar, borang, kriteria audit dan matriks risiko; uji sandaran/pemulihan sebelum memindahkan rekod manual. Selepas itu, bina SoA/penerimaan risiko dan kajian semula pengurusan mengikut aturan yang diluluskan.
 
+### Kesiapsiagaan UAT — modul rekod tersedia
+
+`/uat` kini menyediakan sesi mengikut bahagian dan rujukan versi, sepuluh senario rintis, senario tambahan semasa draf, penguji yang ditugaskan, keputusan Lulus/Gagal/Terhalang, bukti PDF pilihan, pembetulan dan ujian semula. Semua percubaan dikekalkan. Semua senario terkini mesti lulus sebelum pengesahan bebas oleh pelulus; sesi disahkan dibekukan. Notifikasi, sejarah, senarai tindakan papan pemuka dan laporan cetakan turut tersedia.
+
+Ini persediaan untuk UAT, bukan bukti penerimaan oleh pegawai SUK. Sesi demo kekal belum diuji; sesi ujian pelayar ditandakan simulasi. Tindakan seterusnya ialah pegawai menjalankan senario sebenar dengan data contoh, merekodkan kegagalan/halangan dan mengesahkan aturan organisasi. Keupayaan sandaran/pemulihan operasi masih perlu disediakan serta diuji dalam persekitaran berasingan sebelum import rekod sebenar. SoA, keputusan penerimaan risiko dan kajian semula pengurusan kekal fasa berikutnya selepas aturan dipersetujui.
+
 Elakkan membina semua modul serentak. Bukti yang tersusun, kuasa kelulusan yang jelas dan laporan tepat memberi nilai lebih awal daripada menambah bilangan menu.
 
 ## Keputusan yang masih diperlukan untuk real-case

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AcceptanceSessionController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
@@ -21,6 +22,17 @@ Route::middleware('guest')->group(function () {
 });
 Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
 Route::middleware(['auth', 'active'])->group(function () {
+    Route::get('/uat', [AcceptanceSessionController::class, 'index'])->name('uat.index');
+    Route::get('/uat/create', [AcceptanceSessionController::class, 'create'])->name('uat.create');
+    Route::post('/uat', [AcceptanceSessionController::class, 'store'])->name('uat.store');
+    Route::get('/uat/{session}', [AcceptanceSessionController::class, 'show'])->name('uat.show');
+    Route::get('/uat/{session}/report', [AcceptanceSessionController::class, 'report'])->name('uat.report');
+    Route::post('/uat/{session}/scenarios', [AcceptanceSessionController::class, 'scenario'])->name('uat.scenario');
+    Route::post('/uat/{session}/assign', [AcceptanceSessionController::class, 'assign'])->name('uat.assign');
+    Route::post('/uat/{session}/transition', [AcceptanceSessionController::class, 'transition'])->name('uat.transition');
+    Route::post('/uat-scenarios/{scenario}/result', [AcceptanceSessionController::class, 'record'])->name('uat.result');
+    Route::post('/uat-attempts/{attempt}/fix', [AcceptanceSessionController::class, 'fix'])->name('uat.fix');
+    Route::get('/uat-attempts/{attempt}/evidence', [AcceptanceSessionController::class, 'download'])->name('uat.evidence');
     Route::resource('audits', InternalAuditController::class)->except('destroy');
     Route::get('/audits/{audit}/report', [InternalAuditController::class, 'report'])->name('audits.report');
     Route::post('/audits/{audit}/transition', [InternalAuditController::class, 'transition'])->name('audits.transition');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AcceptanceSession;
 use App\Models\AuditEvent;
 use App\Models\AuditFinding;
 use App\Models\Department;
@@ -66,6 +67,11 @@ class AdminController extends Controller
         DB::transaction(function () use ($request, $user, $data) {
             User::where('role', 'admin')->where('is_active', true)->lockForUpdate()->get();
             $locked = User::lockForUpdate()->findOrFail($user->id);
+            $uatOwned = AcceptanceSession::where('created_by', $locked->id)->whereIn('status', ['draft', 'testing', 'review'])->exists();
+            $uatTesting = AcceptanceSession::where('tester_id', $locked->id)->whereIn('status', ['draft', 'testing', 'review'])->exists();
+            if (($uatOwned && $data['role'] !== 'coordinator') || ($uatTesting && ((int) $data['department_id'] !== $locked->department_id || ! in_array($data['role'], ['officer', 'coordinator'], true)))) {
+                throw ValidationException::withMessages(['role' => 'Pengguna mempunyai sesi UAT belum selesai. Selesaikan sesi atau pindahkan penguji sebelum menukar bahagian atau peranan.']);
+            }
             $openAudit = InternalAudit::where('status', '!=', 'closed')->whereHas('auditors', fn ($query) => $query->where('users.id', $locked->id))->exists();
             $auditOwner = AuditFinding::where('owner_id', $locked->id)->where('status', '!=', 'closed')->exists();
             if (($openAudit && ((int) $data['department_id'] !== $locked->department_id || $data['role'] !== 'coordinator')) || ($auditOwner && ((int) $data['department_id'] !== $locked->department_id || ! in_array($data['role'], ['officer', 'coordinator'], true))) || (InternalAudit::where('created_by', $locked->id)->exists() && $data['role'] !== 'coordinator')) {

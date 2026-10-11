@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AcceptanceSession;
 use App\Models\Document;
 use App\Models\InternalAudit;
 use App\Models\Risk;
@@ -44,6 +45,10 @@ class NotificationController extends Controller
         $data = $alert->data;
         $target = (int) $data['target_id'];
         switch ($data['kind']) {
+            case 'uat':
+                Gate::authorize('view', AcceptanceSession::findOrFail($target));
+                $url = route('uat.show', $target);
+                break;
             case 'audit':
                 Gate::authorize('view', InternalAudit::findOrFail($target));
                 $url = route('audits.show', $target);

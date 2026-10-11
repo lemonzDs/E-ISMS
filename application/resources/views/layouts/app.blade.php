@@ -5,6 +5,7 @@
 <div class="work-shell"><aside class="work-nav"><a href="{{ route('home') }}" class="brand">e-ISMS</a><small>SUK Pahang · Rintis tempatan</small><nav aria-label="Navigasi utama">
 @if(auth()->user()->role !== 'admin')<a href="{{ route('documents.index') }}" @if(request()->is('documents*','versions*')) aria-current="page" @endif>Daftar dokumen</a>@endif
 <a href="{{ route('dashboard') }}" @if(request()->routeIs('dashboard')) aria-current="page" @endif>Papan pemuka</a>
+@can('viewAny',App\Models\AcceptanceSession::class)<a href="{{ route('uat.index') }}" @if(request()->is('uat*')) aria-current="page" @endif>Ujian penerimaan (UAT)</a>@endcan
 @can('viewAny',App\Models\InternalAudit::class)<a href="{{ route('audits.index') }}" @if(request()->is('audits*','audit-*')) aria-current="page" @endif>Audit dalaman</a>@endcan
 @can('viewAny',App\Models\Risk::class)<a href="{{ route('reports.index') }}" @if(request()->routeIs('reports.*')) aria-current="page" @endif>Laporan & eksport</a>@endcan
 @php($unreadNotifications = auth()->user()->unreadNotifications()->count())
